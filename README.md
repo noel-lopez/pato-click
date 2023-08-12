@@ -1,10 +1,48 @@
-# Nuxt 3 Minimal Starter
+# El Pato Click - ¡Gana más Patitos de Baño que Nadie!
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+<!--
+<p align="center">
+<img src="" alt="project image">
+</p>
+-->
 
-## Setup
+¡Sumérgete en la adictiva experiencia de El Pato Click, un juego clicker que te sumergirá en el apasionante mundo de los patitos de baño! 🦆💦
 
-Make sure to install the dependencies:
+Puedes jugarlo [aquí](https://patoclick.vercel.app/).
+
+## Descripción
+
+El Pato Click es un proyecto creado para la [KuroJam](https://www.kurojam.com/), una hackathon en la que hemos invertido dos semanas de esfuerzo y creatividad. 
+
+En este juego, tu objetivo es simple pero gratificante: ¡Acumula la mayor cantidad de patitos de baño posibles! Cada inversión que hagas te acerca un poco más al primer puesto del ranking de todos los jugadores. ¿Serás capaz de convertirte en el mejor?
+
+## Características destacadas
+
+- **🦆 Acumula patitos de baño:** Comienza con un modesto patito y conviértelo en un imperio de patitos que desafíe a la competencia. ¡Gana patitos en cantidades astronómicas!
+- **🚀 Mejoras emocionantes:** Invierte en mejoras que te permitan generar patitos más rápido.
+- **⏰ Juego Automático Inteligente:** No tienes que estar siempre presente. Contrata a administradores que sigan generando patitos mientras te tomas un descanso. ¡Vuelve y descubre cuántos patitos has acumulado en tu ausencia!
+- **🏆 Ranking:** Compite contra otros jugadores y demuestra que eres el mejor. ¡Conviértete en el número uno!
+- **♾️ Diversión sin fin:** Desde humildes estanques de patitos hasta lujosas lagunas de patos dorados, ¡hay mucho que descubrir!
+
+## Tecnologías
+
+- [Nuxt 3](https://nuxt.com) - El Framework Vue.js para crear aplicaciones web modernas y potentes.
+- [Uno CSS](https://unocss.dev) - Instantáneo, fácil de usar, sin escaneo. 5x veces más rápido que Tailwind CSS.
+- [Vercel](https://vercel.com/) - Despliegue fácil y rápido. Sin configuración, sin comandos, sin problemas.
+
+## Créditos
+
+El Pato Click ha sido creado con pasión y dedicación por [Noel López](https://www.github.com/noel-lopez) y [Unai](https://www.github.com/owlai) como participantes de la [KuroJam](https://www.kurojam.com/), hackathon organizada por [ikurotime](https://www.twitch.tv/ikurotime).
+
+## Despliegue en local
+
+Clona el repositorio:
+
+```bash
+git clone https://github.com/noel-lopez/pato-click
+```
+
+Instala las dependencias:
 
 ```bash
 # npm
@@ -17,9 +55,7 @@ pnpm install
 yarn install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+Inicia el servidor de desarrollo en `http://localhost:3000`:
 
 ```bash
 # npm
@@ -32,32 +68,9 @@ pnpm run dev
 yarn dev
 ```
 
-## Production
+Échale un ojo a la [documentación de Nuxt 3](https://nuxt.com/docs/getting-started/introduction) para aprender más.
 
-Build the application for production:
+## Licencia
 
-```bash
-# npm
-npm run build
+Este proyecto está bajo la Licencia [MIT](https://opensource.org/licenses/MIT).
 
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
