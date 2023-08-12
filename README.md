@@ -28,6 +28,7 @@ En este juego, tu objetivo es simple pero gratificante: ¡Acumula la mayor canti
 
 - [Nuxt 3](https://nuxt.com) - El Framework Vue.js para crear aplicaciones web modernas y potentes.
 - [Uno CSS](https://unocss.dev) - Instantáneo, fácil de usar, sin escaneo. 5x veces más rápido que Tailwind CSS.
+- [Supabase](https://supabase.io/) - Backend as a Service que simplifica el desarrollo de la autenticación y la base de datos.
 - [Vercel](https://vercel.com/) - Despliegue fácil y rápido. Sin configuración, sin comandos, sin problemas.
 
 ## Créditos
