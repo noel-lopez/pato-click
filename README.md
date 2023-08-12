@@ -32,7 +32,7 @@ En este juego, tu objetivo es simple pero gratificante: ¡Acumula la mayor canti
 
 ## Créditos
 
-El Pato Click ha sido creado con pasión y dedicación por [Noel López](https://www.github.com/noel-lopez) y [Unai](https://www.github.com/owlai) como participantes de la [KuroJam](https://www.kurojam.com/), hackathon organizada por [ikurotime](https://www.twitch.tv/ikurotime).
+El Pato Click ha sido creado con pasión y dedicación por [Noel López](https://www.github.com/noel-lopez) y [Unai Mengual](https://www.github.com/owlnai) como participantes de la [KuroJam](https://www.kurojam.com/), hackathon organizada por [ikurotime](https://www.twitch.tv/ikurotime).
 
 ## Despliegue en local
 
