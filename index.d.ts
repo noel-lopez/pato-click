@@ -1,28 +1,28 @@
 interface BaseItem {
-    /** Name of the item */
-    name: string
-    /** Description of the item */
-    description: string
-    /** Relative image path of the item */
-    img: string
+  /** Name of the item */
+  name: string
+  /** Description of the item */
+  description: string
+  /** Relative image path of the item */
+  img: string
 }
 
 interface ItemConfig extends BaseItem {
   /** cost per item  */
-  costBase: BigInt
+  costBase: number
   /** growth per item  */
   rateGrowth: number
   time: number
-  revenueBase: BigInt
+  revenueBase: number
 }
 
 interface ManagersConfig extends BaseItem {
-  cost: BigInt
+  cost: number
 }
 
 interface UpgradesConfig extends Omit<BaseItem, 'img'> {
   item: string
-  cost: BigInt
+  cost: number
   effect: number
 }
 
@@ -37,10 +37,10 @@ interface SkinsConfig extends BaseItem {
 declare module "nuxt/schema" {
   interface AppConfigInput {
     items: {
-        [itemName: string]: ItemConfig
-      },
+      [itemName: string]: ItemConfig
+    },
     managers: {
-        [K in keyof AppConfigInput['items']]: ManagersConfig
+      [K in keyof AppConfigInput['items']]: ManagersConfig
     }
     upgrades: Array<UpgradesConfig>
     achievements: {
@@ -54,4 +54,4 @@ declare module "nuxt/schema" {
   }
 }
 
-export {}
+export { }
