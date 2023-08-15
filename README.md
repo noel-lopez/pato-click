@@ -35,6 +35,8 @@ En este juego, tu objetivo es simple pero gratificante: ¡Acumula la mayor canti
 
 El Pato Click ha sido creado con pasión y dedicación por [Noel López](https://www.github.com/noel-lopez) y [Unai Mengual](https://www.github.com/owlnai) como participantes de la [KuroJam](https://www.kurojam.com/), hackathon organizada por [David Huertas](https://www.twitch.tv/ikurotime).
 
+Arte digital hecho por [Alma Escamilla](https://www.instagram.com/arumxchan/) 💜.
+
 ## Despliegue en local
 
 Clona el repositorio:
