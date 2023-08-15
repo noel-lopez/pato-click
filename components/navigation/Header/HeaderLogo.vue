@@ -1,6 +1,5 @@
 <template>
-    <div>
-      Wiiii
-    </div>
-  </template>
-  
+  <div>
+    Wiiii
+  </div>
+</template>

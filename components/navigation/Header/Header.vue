@@ -1,7 +1,7 @@
 <template>
   <header>
-    <HeaderLogo />
-    <HeaderItems />
-    <HeaderPound />
+    <navigationHeaderLogo />
+    <navigationHeaderItems />
+    <navigationHeaderPound />
   </header>
 </template>
