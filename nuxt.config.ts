@@ -9,6 +9,13 @@ export default defineNuxtConfig({
   supabase: {
     redirect: false,
   },
+  nitro: {
+    esbuild: {
+      options: {
+        target: 'esnext',
+      },
+    },
+  },
   extends: 'nuxt-seo-kit',
   runtimeConfig: {
     lastfmKey: '',
