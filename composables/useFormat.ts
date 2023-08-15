@@ -1,13 +1,39 @@
-export function useFormat() {
+const currencyBreakpoints = [
+  {
+    min: 1_000_000,
+    name: 'millones',
+  },
+  {
+    min: 1_000_000_000,
+    name: 'mil millones',
+  },
+  {
+    min: 1_000_000_000_000,
+    name: 'billones',
+  },
+  {
+    min: 1_000_000_000_000_000,
+    name: 'trillones',
+  },
+  {
+    min: 1_000_000_000_000_000_000,
+    name: 'cuatrillones',
+  },
+  {
+    min: 1_000_000_000_000_000_000_000,
+    name: 'quintillones',
+  },
+]
 
+export function useFormat() {
   /**
    * Given a currency amount, returns a string with the corresponding amount formatted if number is greater than 1,000,000,000
-   * 
+   *
    * Use it for the user's money
-   * 
+   *
    * @param value currency amount
    * @returns formatted currency amount
-   * 
+   *
    * @example
    * formatCurrency(2_400_746.93847) // 2.400.746,94
    * formatCurrency(5_400_000_000) // 5,4 mil millones
@@ -16,17 +42,19 @@ export function useFormat() {
   function currencyToString(value: number) {
     if (value < 1_000_000_000) {
       return value.toLocaleString('es-ES', { maximumFractionDigits: 2, minimumFractionDigits: 0 })
-    } else {
+    }
+    else {
       const breakpoint = currencyBreakpoints.findLast(b => value >= b.min)
       if (breakpoint && value / breakpoint.min < 1000) {
-        let amount = value / breakpoint.min
+        const amount = value / breakpoint.min
         return `${amount.toLocaleString('es-ES', { maximumFractionDigits: 3, minimumFractionDigits: 0 })} ${breakpoint.name}`
-      } else {
+      }
+      else {
         // return value in cientific notation
         return value.toLocaleString('es-ES', {
           notation: 'scientific',
           maximumFractionDigits: 2,
-          minimumFractionDigits: 0
+          minimumFractionDigits: 0,
         })
       }
     }
@@ -34,16 +62,16 @@ export function useFormat() {
 
   /**
    * Given a currency amount, returns a string with the corresponding amount formatted if number is greater than 1,000,000
-   * 
+   *
    * Use it for:
    * - Items income
    * - Items cost
    * - Upgrade costs
    * - Manager costs
-   * 
+   *
    * @param value currency amount
    * @returns formatted currency amount
-   * 
+   *
    * @example
    * formatUpgradeCost(400_746.93847) // 400.746,94
    * formatUpgradeCost(5_400_000) // 5,4 millones
@@ -52,17 +80,19 @@ export function useFormat() {
   function numberToString(value: number) {
     if (value < 1_000_000) {
       return value.toLocaleString('es-ES', { maximumFractionDigits: 2, minimumFractionDigits: 0 })
-    } else {
+    }
+    else {
       const breakpoint = currencyBreakpoints.findLast(b => value >= b.min)
       if (breakpoint && value / breakpoint.min < 1000) {
-        let amount = value / breakpoint.min
+        const amount = value / breakpoint.min
         return `${amount.toLocaleString('es-ES', { maximumFractionDigits: 3, minimumFractionDigits: 0 })} ${breakpoint.name}`
-      } else {
+      }
+      else {
         // return value in cientific notation
         return value.toLocaleString('es-ES', {
           notation: 'scientific',
           maximumFractionDigits: 2,
-          minimumFractionDigits: 0
+          minimumFractionDigits: 0,
         })
       }
     }
@@ -70,7 +100,7 @@ export function useFormat() {
 
   /**
    * Given a number of milliseconds, return a string with the corresponding amount formatted this way:
-   * 
+   *
    * HH:MM:SS
    * @param value milliseconds
    */
@@ -85,33 +115,6 @@ export function useFormat() {
   return {
     currencyToString,
     numberToString,
-    msToHHMMSS
+    msToHHMMSS,
   }
 }
-
-const currencyBreakpoints = [
-  {
-    min: 1_000_000,
-    name: 'millones'
-  },
-  {
-    min: 1_000_000_000,
-    name: 'mil millones'
-  },
-  {
-    min: 1_000_000_000_000,
-    name: 'billones'
-  },
-  {
-    min: 1_000_000_000_000_000,
-    name: 'trillones'
-  },
-  {
-    min: 1_000_000_000_000_000_000,
-    name: 'cuatrillones'
-  },
-  {
-    min: 1_000_000_000_000_000_000_000,
-    name: 'quintillones'
-  },
-]
