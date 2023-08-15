@@ -272,5 +272,20 @@ export default defineAppConfig({
       description: 'Pato tonto',
       img: 'skin_default.png',
     },
+    defaultBrown: {
+      name: 'Pato marrón',
+      description: 'Pato con manchitas blancas',
+      img: 'skin_default_brown.png',
+    },
+    frog: {
+      name: 'RanaPato',
+      description: 'Pato con gorrito de rana',
+      img: 'skin_frog.png',
+    },
+    kuro: {
+      name: 'KuroPato',
+      description: 'Pato streamer de programación',
+      img: 'skin_kuro.png',
+    },
   },
 })
