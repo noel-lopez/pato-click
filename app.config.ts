@@ -234,9 +234,41 @@ export default defineAppConfig({
   ],
   achievements: {
     currency: {
-      hundred: {
-        name: '',
-        description: '',
+      100: {
+        name: 'Aspirante a patodólars',
+        description: 'Consigue tus primeras 100 patomonedas',
+      },
+      50_000: {
+        name: 'Mentor de patitos',
+        description: 'Consigue 50.000 patomonedas',
+      },
+      100_000: {
+        name: 'Lord Patoso',
+        description: 'Consigue 100.000 patomonedas',
+      },
+      1_000_000: {
+        name: 'Millonario de plumitas',
+        description: 'Consigue 1.000.000 patomonedas',
+      },
+      500_000_000: {
+        name: 'Campeón del chapoteo',
+        description: 'Consigue 500 millones de patomonedas',
+      },
+      1_000_000_000: {
+        name: 'Emperador de la pluma',
+        description: 'Consigue 1.000 millones de patomonedas',
+      },
+      1_000_000_000_000: {
+        name: 'Quacker mágico',
+        description: 'Consigue 1 billón de patomonedas',
+      },
+      10_000_000_000_000: {
+        name: 'Rey de la charca',
+        description: 'Consigue 10 billones de patomonedas',
+      },
+      1_000_000_000_000_000: {
+        name: 'Maestro del Cuack',
+        description: 'Consigue 1 trillón de patomonedas',
       },
     },
     item: {
