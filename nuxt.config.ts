@@ -1,9 +1,10 @@
 export default defineNuxtConfig({
   modules: [
     '@nuxt/image',
-    '@nuxtjs/supabase',
     '@unocss/nuxt',
     '@vueuse/nuxt',
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
   ],
   css: ['@unocss/reset/tailwind.css'],
   supabase: {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const time = ref(60000) // miliseconds to complete 100% of the bar
-const gain = ref(100) // money to gain when the bar is complete
+const time = ref(200) // miliseconds to complete 100% of the bar
+const gain = ref(1000000) // money to gain when the bar is complete
 const money = ref(0)
 const percentage = ref(0) // percentage of the bar
 const isAutomatic = ref(true) // if true, the bar will start again when it's complete
@@ -29,11 +29,6 @@ function start() {
     }
   }, 16)
 }
-
-function stop() {
-  percentage.value = 0
-  clearInterval(interval)
-}
 </script>
 
 <template>
@@ -42,11 +37,6 @@ function stop() {
       <h2 class="text-lg font-500">
         Money: {{ money }}
       </h2>
-      <h3
-        class="text-lg font-400"
-      >
-        Percentage: {{ formattedPercentage }}%
-      </h3>
     </div>
     <div class="flex gap-5">
       <button
@@ -54,12 +44,6 @@ function stop() {
         @click="start"
       >
         Start
-      </button>
-      <button
-        class="p-2 mb-6 bg-blue-700 rounded-lg"
-        @click="stop"
-      >
-        Stop
       </button>
       <div class="flex items-center gap-2 mb-6">
         <input id="checkAutomatic" v-model="isAutomatic" type="checkbox" class="w-4 h-4">
@@ -72,3 +56,20 @@ function stop() {
     <span>{{ time / 1000 }} sec</span>
   </div>
 </template>
+
+<style scoped>
+.progress-bar-striped {
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+  animation: progress-bar-stripes 2s linear infinite;
+}
+
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+</style>
