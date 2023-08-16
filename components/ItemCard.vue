@@ -46,7 +46,9 @@ function start() {
           <h2 class="text-lg font-bold">
             {{ name }}
           </h2>
-          <span class="bg-yellow-200 text-yellow-900 border border-yellow-300 rounded-full px-3 py-1 font-semibold text-xs">
+          <span
+            class="bg-yellow-200 text-yellow-900 border border-yellow-300 rounded-full px-3 py-1 font-semibold text-xs"
+          >
             lvl {{ 29 }}
           </span>
         </div>
@@ -54,14 +56,22 @@ function start() {
       </div>
     </div>
     <div class="flex gap-1">
-      <div class="w-full bg-yellow-200 p-4 rounded-xl shadow-[0_4px_0_#cbbf6e]  active:translate-y-1 active:!shadow-none select-none" aria-label="Start farming" @click="start">
+      <div
+        class="w-full bg-yellow-200 p-4 rounded-xl shadow-[0_4px_0_#cbbf6e]  active:translate-y-1 active:!shadow-none select-none"
+        aria-label="Start farming" @click="start"
+      >
         <div v-if="!isAutomatic" class="font-medium h-6 bg-green-300 rounded-lg overflow-hidden relative">
           <div class="h-full bg-yellow-50" :style="{ transform: `translateX(${percentage * 320}px)` }" />
+          <span class="absolute top-0 left-1/2 -translate-x-1/2">${{ numberToString(gain) }}</span>
+        </div>
+        <div v-else class="h-5 bg-green-400 progress-bar-striped rounded-lg overflow-hidden relative">
           <span class="absolute top-0 left-1/2 -translate-x-1/2">{{ numberToString(gain / (time / 1000)) }} /sec</span>
         </div>
-        <div v-else class="h-5 bg-green-400 progress-bar-striped rounded-lg overflow-hidden" />
       </div>
-      <div class="bg-amber-300 p-4 rounded-xl shadow-[0_4px_0_#cbbf6e]  active:translate-y-1 active:!shadow-none select-none" aria-label="Start farming">
+      <div
+        class="bg-amber-300 p-4 rounded-xl shadow-[0_4px_0_#cbbf6e]  active:translate-y-1 active:!shadow-none select-none"
+        aria-label="Start farming"
+      >
         x10
       </div>
     </div>
@@ -94,6 +104,7 @@ function start() {
   from {
     background-position: 40px 0;
   }
+
   to {
     background-position: 0 0;
   }
