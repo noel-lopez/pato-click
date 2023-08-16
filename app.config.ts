@@ -6,7 +6,7 @@ export default defineAppConfig({
       img: 'item_food.png',
       costBase: 4,
       rateGrowth: 1.07,
-      time: 0.6,
+      time: 600,
       revenueBase: 1,
     },
     lily: {
@@ -15,7 +15,7 @@ export default defineAppConfig({
       img: 'item_lily.png',
       costBase: 60,
       rateGrowth: 1.15,
-      time: 3,
+      time: 3_000,
       revenueBase: 60,
     },
     divingKit: {
@@ -24,7 +24,7 @@ export default defineAppConfig({
       img: 'item_diving_kit.png',
       costBase: 720,
       rateGrowth: 1.14,
-      time: 6,
+      time: 6_000,
       revenueBase: 540,
     },
     lotus: {
@@ -33,7 +33,7 @@ export default defineAppConfig({
       img: 'item_lotus.png',
       costBase: 8_640,
       rateGrowth: 1.13,
-      time: 12,
+      time: 12_000,
       revenueBase: 4_320,
     },
     frog: {
@@ -42,7 +42,7 @@ export default defineAppConfig({
       img: 'item_frog.png',
       costBase: 103_680,
       rateGrowth: 1.12,
-      time: 24,
+      time: 24_000,
       revenueBase: 51_840,
     },
     koi: {
@@ -51,7 +51,7 @@ export default defineAppConfig({
       img: 'item_koi.png',
       costBase: 1_244_160,
       rateGrowth: 1.11,
-      time: 96,
+      time: 96_000,
       revenueBase: 622_080,
     },
     fountain: {
@@ -60,7 +60,7 @@ export default defineAppConfig({
       img: 'item_fountain.png',
       costBase: 14_929_920,
       rateGrowth: 1.10,
-      time: 384,
+      time: 384_000,
       revenueBase: 7_464_960,
     },
     lantern: {
@@ -69,7 +69,7 @@ export default defineAppConfig({
       img: 'item_lantern.png',
       costBase: 179_159_040,
       rateGrowth: 1.09,
-      time: 1_536,
+      time: 1_536_000,
       revenueBase: 89_579_520,
     },
     thermalBath: {
@@ -78,7 +78,7 @@ export default defineAppConfig({
       img: 'item_thermal_bath.png',
       costBase: 2_149_908_480,
       rateGrowth: 1.08,
-      time: 6_144,
+      time: 6_144_000,
       revenueBase: 1_074_954_240,
     },
     house: {
@@ -87,7 +87,7 @@ export default defineAppConfig({
       img: 'item_house.png',
       costBase: 25_798_901760,
       rateGrowth: 1.07,
-      time: 36_864,
+      time: 36_864_000,
       revenueBase: 29_668_737_024,
     },
   },

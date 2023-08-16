@@ -12,7 +12,7 @@ nuxtApp.hook('page:finish', () => {
 
 <template>
   <div
-    class="min-h-screen font-sans text-gray-600 bg-cinder-50 dark:bg-black  dark:text-zinc-400 flex flex-col justify-between custom-inter scroll-smooth antialiased selection:bg-red-300 linear-bg p-4"
+    class="min-h-screen font-sans text-gray-600 bg-cinder-50 dark:bg-black  dark:text-zinc-400 flex flex-col justify-between custom-inter scroll-smooth antialiased selection:bg-yellow-300 linear-bg p-4"
   >
     <div v-if="loading" class="fixed left-0 top-0 h-0.5 w-full z-50 bg-green-500" />
     <NavigationHeader />

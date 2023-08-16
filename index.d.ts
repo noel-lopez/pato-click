@@ -1,4 +1,4 @@
-interface BaseItem {
+export interface BaseItem {
   /** Name of the item */
   name: string
   /** Description of the item */
@@ -7,7 +7,7 @@ interface BaseItem {
   img: string
 }
 
-interface ItemConfig extends BaseItem {
+export interface ItemConfig extends BaseItem {
   /** cost per item  */
   costBase: number
   /** growth per item  */

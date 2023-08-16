@@ -1,3 +1,4 @@
+import { persistedState } from 'pinia-plugin-persistedstate'
 import { defineStore } from 'pinia'
 
 export const useStore = defineStore('main', {
@@ -6,8 +7,5 @@ export const useStore = defineStore('main', {
       cash: 0,
       duckSkin: 'default',
     }
-  },
-  persist: {
-    storage: persistedState.localStorage,
   },
 })
