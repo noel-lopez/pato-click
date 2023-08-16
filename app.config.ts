@@ -1,8 +1,8 @@
 export default defineAppConfig({
   items: {
     food: {
-      name: 'Comida para patos',
-      description: 'Alimenta a los patos',
+      name: 'Panecillos',
+      description: '¡Comidita pa-tol mundo!',
       img: 'item_food.png',
       costBase: 4,
       rateGrowth: 1.07,
@@ -10,8 +10,8 @@ export default defineAppConfig({
       revenueBase: 1,
     },
     lily: {
-      name: 'Nenúfares',
-      description: 'Aumenta la felicidad de los patos',
+      name: 'Nenúfar',
+      description: 'Barcos en el estanque.',
       img: 'item_lily.png',
       costBase: 60,
       rateGrowth: 1.15,
@@ -20,7 +20,7 @@ export default defineAppConfig({
     },
     divingKit: {
       name: 'Equipo de buceo',
-      description: 'Aumenta la felicidad de los patos',
+      description: 'Patos subacuáticos.',
       img: 'item_diving_kit.png',
       costBase: 720,
       rateGrowth: 1.14,
@@ -29,7 +29,7 @@ export default defineAppConfig({
     },
     lotus: {
       name: 'Flor de loto',
-      description: 'Aumenta la felicidad de los patos',
+      description: 'Elegancia en el agua.',
       img: 'item_lotus.png',
       costBase: 8_640,
       rateGrowth: 1.13,
@@ -38,7 +38,7 @@ export default defineAppConfig({
     },
     frog: {
       name: 'Rana',
-      description: 'Aumenta la felicidad de los patos',
+      description: '¡Croac-avillosa compañía!',
       img: 'item_frog.png',
       costBase: 103_680,
       rateGrowth: 1.12,
@@ -47,7 +47,7 @@ export default defineAppConfig({
     },
     koi: {
       name: 'Peces koi',
-      description: 'Aumenta la felicidad de los patos',
+      description: 'Estanque de colores.',
       img: 'item_koi.png',
       costBase: 1_244_160,
       rateGrowth: 1.11,
@@ -55,8 +55,8 @@ export default defineAppConfig({
       revenueBase: 622_080,
     },
     fountain: {
-      name: 'Fuente para patos',
-      description: 'Aumenta la felicidad de los patos',
+      name: 'Fuente Aleteo',
+      description: 'Sacudiendo el plumaje.',
       img: 'item_fountain.png',
       costBase: 14_929_920,
       rateGrowth: 1.10,
@@ -64,8 +64,8 @@ export default defineAppConfig({
       revenueBase: 7_464_960,
     },
     lantern: {
-      name: 'Farolillo',
-      description: 'Aumenta la felicidad de los patos',
+      name: 'Farolillos',
+      description: 'Ambientazo nocturno.',
       img: 'item_lantern.png',
       costBase: 179_159_040,
       rateGrowth: 1.09,
@@ -74,7 +74,7 @@ export default defineAppConfig({
     },
     thermalBath: {
       name: 'Baño termal',
-      description: 'Aumenta la felicidad de los patos',
+      description: '¡Relaja tus plumas!',
       img: 'item_thermal_bath.png',
       costBase: 2_149_908_480,
       rateGrowth: 1.08,
@@ -82,8 +82,8 @@ export default defineAppConfig({
       revenueBase: 1_074_954_240,
     },
     house: {
-      name: 'Casa para patos',
-      description: 'Aumenta la felicidad de los patos',
+      name: 'Casita patuna',
+      description: 'Hogar pa-to\' la vida.',
       img: 'item_house.png',
       costBase: 25_798_901760,
       rateGrowth: 1.07,
@@ -274,163 +274,163 @@ export default defineAppConfig({
     item: {
       food25: {
         name: 'Festín patoso',
-        description: 'Nivel 25 de comida para patos!',
+        description: 'Nivel 25 de Panecillos!',
       },
       food50: {
         name: 'Banquete acuático',
-        description: 'Nivel 50 de comida para patos!',
+        description: 'Nivel 50 de Panecillos!',
       },
       food100: {
         name: 'Maestro Chef de Patos',
-        description: 'Nivel 100 de comida para patos!',
+        description: 'Nivel 100 de Panecillos!',
       },
       food200: {
         name: 'Pato Gourmet',
-        description: 'Nivel 200 de comida para patos!',
+        description: 'Nivel 200 de Panecillos!',
       },
       lily25: {
         name: 'Salto inicial',
-        description: 'Nivel 25 de nenúfares!',
+        description: 'Nivel 25 de Nenúfar!',
       },
       lily50: {
         name: 'Paseo Flotante',
-        description: 'Nivel 50 de nenúfares!',
+        description: 'Nivel 50 de Nenúfar!',
       },
       lily100: {
         name: 'Jardín de Patos',
-        description: 'Nivel 100 de nenúfares!',
+        description: 'Nivel 100 de Nenúfar!',
       },
       lily200: {
         name: 'Maestro de los estanques',
-        description: 'Nivel 200 de nenúfares!',
+        description: 'Nivel 200 de Nenúfar!',
       },
       divingKit25: {
         name: 'Buceo Inicial',
-        description: 'Nivel 25 de equipo de buceo!',
+        description: 'Nivel 25 de Equipo de buceo!',
       },
       divingKit50: {
         name: 'Submarinista Patoso',
-        description: 'Nivel 50 de equipo de buceo!',
+        description: 'Nivel 50 de Equipo de buceo!',
       },
       divingKit100: {
         name: 'Ducktonauta acuático',
-        description: 'Nivel 100 de equipo de buceo!',
+        description: 'Nivel 100 de Equipo de buceo!',
       },
       divingKit200: {
         name: 'Explorador subacuático',
-        description: 'Nivel 200 de equipo de buceo!',
+        description: 'Nivel 200 de Equipo de buceo!',
       },
       lotus25: {
         name: 'Loto Naciente',
-        description: 'Nivel 25 de flores de loto!',
+        description: 'Nivel 25 de Flor de loto!',
       },
       lotus50: {
         name: 'Jardín floral',
-        description: 'Nivel 50 de flores de loto!',
+        description: 'Nivel 50 de Flor de loto!',
       },
       lotus100: {
         name: 'Cultivador de paz',
-        description: 'Nivel 100 de flores de loto!',
+        description: 'Nivel 100 de Flor de loto!',
       },
       lotus200: {
         name: 'Emperador del estanque',
-        description: 'Nivel 200 de flores de loto!',
+        description: 'Nivel 200 de Flor de loto!',
       },
       frog25: {
         name: 'Pato saltarín',
-        description: 'Nivel 25 de ranas!',
+        description: 'Ranita nivel 25!',
       },
       frog50: {
         name: 'Amigo anfibio',
-        description: 'Nivel 50 de ranas!',
+        description: 'Ranita nivel 50!',
       },
       frog100: {
         name: 'Soberano de los sapos',
-        description: 'Nivel 100 de ranas!',
+        description: 'Ranita nivel 100!',
       },
       frog200: {
         name: 'Reino de los saltos',
-        description: 'Nivel 200 de ranas!',
+        description: 'Ranita nivel 200!',
       },
       koi25: {
         name: 'Estanque oriental',
-        description: 'Nivel 25 de peces koi!',
+        description: 'Nivel 25 de Peces koi!',
       },
       koi50: {
         name: 'Acuario viviente',
-        description: 'Nivel 50 de peces koi!',
+        description: 'Nivel 50 de Peces koi!',
       },
       koi100: {
         name: 'Zen acuático',
-        description: 'Nivel 100 de peces koi!',
+        description: 'Nivel 100 de Peces koi!',
       },
       koi200: {
         name: 'Dragón dorado',
-        description: 'Nivel 200 de peces koi!',
+        description: 'Nivel 200 de Peces koi!',
       },
       fountain25: {
         name: 'Gotas de diversión',
-        description: 'Nivel 25 de fuentes para patos!',
+        description: 'Nivel 25 de Fuente Aleteo!',
       },
       fountain50: {
         name: 'Parque acuático',
-        description: 'Nivel 50 de fuentes para patos!',
+        description: 'Nivel 50 de Fuente Aleteo!',
       },
       fountain100: {
         name: 'Cascada de patos',
-        description: 'Nivel 100 de fuentes para patos!',
+        description: 'Nivel 100 de Fuente Aleteo!',
       },
       fountain200: {
         name: 'Maestro de las aguas',
-        description: 'Nivel 200 de fuentes para patos!',
+        description: 'Nivel 200 de Fuente Aleteo!',
       },
       lantern25: {
         name: 'Iluminador nocturno',
-        description: 'Nivel 25 de farolillos!',
+        description: 'Nivel 25 de Farolillos!',
       },
       lantern50: {
         name: 'Sendero Luminoso',
-        description: 'Nivel 50 de farolillos!',
+        description: 'Nivel 50 de Farolillos!',
       },
       lantern100: {
         name: 'Festival de luces',
-        description: 'Nivel 100 de farolillos!',
+        description: 'Nivel 100 de Farolillos!',
       },
       lantern200: {
         name: 'Maestro de la luz',
-        description: 'Nivel 200 de farolillos!',
+        description: 'Nivel 200 de Farolillos!',
       },
       thermalBath25: {
         name: 'Relax acuático',
-        description: 'Nivel 25 de baños termales!',
+        description: 'Nivel 25 de Baño termal!',
       },
       thermalBath50: {
         name: 'Spa de plumitas',
-        description: 'Nivel 50 de baños termales!',
+        description: 'Nivel 50 de Baño termal!',
       },
       thermalBath100: {
         name: 'Ducktástico Descanso',
-        description: 'Nivel 100 de baños termales!',
+        description: 'Nivel 100 de Baño termal!',
       },
       thermalBath200: {
         name: 'Maestro del baño',
-        description: 'Nivel 200 de baños termales!',
+        description: 'Nivel 200 de Baño termal!',
       },
       house25: {
         name: 'Pato de alquiler',
-        description: 'Nivel 25 de casas para patos!',
+        description: 'Nivel 25 de Casita patuna!',
       },
       house50: {
         name: 'Hogar acolchado',
-        description: 'Nivel 50 de casas para patos!',
+        description: 'Nivel 50 de Casita patuna!',
       },
       house100: {
         name: 'Nido de Comodidad',
-        description: 'Nivel 100 de casas para patos!',
+        description: 'Nivel 100 de Casita patuna!',
       },
       house200: {
         name: 'Palacio de plumas',
-        description: 'Nivel 200 de casas para patos!',
+        description: 'Nivel 200 de Casita patuna!',
       },
     },
     easteregg: {
@@ -467,7 +467,7 @@ export default defineAppConfig({
     },
     frog: {
       name: 'RanaPato',
-      description: 'Pato con gorrito de rana',
+      description: 'Mejor amigo de la ranita del estanque',
       img: 'skin_frog.png',
     },
     kuro: {
