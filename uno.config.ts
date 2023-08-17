@@ -14,8 +14,8 @@ export default defineConfig({
     presetWebFonts({
       provider: 'google',
       fonts: {
-        sans: 'Inter:400,500,600,700',
-        headings: 'Syne:700',
+        sans: 'Dekko:400,500,700',
+        headings: 'Berkshire Swash',
       },
     }),
   ],
