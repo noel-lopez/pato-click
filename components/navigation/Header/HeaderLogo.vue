@@ -1,5 +1,6 @@
 <template>
-  <div>
-    Wiiii
+  <div class="p-8">
+    <nuxt-img src="/brand/iso.png" width="256" class="w-full" />
+    <nuxt-img src="/brand/logo.png" width="256" class="w-full" />
   </div>
 </template>

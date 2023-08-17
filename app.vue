@@ -12,36 +12,28 @@ nuxtApp.hook('page:finish', () => {
 
 <template>
   <div
-    class="min-h-screen font-sans text-gray-600 bg-cinder-50 dark:bg-black  dark:text-zinc-400 flex flex-col justify-between custom-inter scroll-smooth antialiased selection:bg-yellow-300 linear-bg p-4"
+    class="min-h-screen font-sans text-gray-600 dark:text-zinc-400 grid grid-cols-4 custom-inter scroll-smooth antialiased selection:bg-yellow-300 p-4 gap-24 container mx-auto"
   >
     <div v-if="loading" class="fixed left-0 top-0 h-0.5 w-full z-50 bg-green-500" />
     <NavigationHeader />
     <NuxtLayout>
-      <SeoKit />
-      <OgImageStatic component="PageOgImage" />
-      <NuxtPage class="mb-auto" />
+      <div class="mb-auto col-span-3 mx-auto w-full">
+        <SeoKit />
+        <OgImageStatic component="PageOgImage" />
+        <NuxtPage class="" />
+      </div>
     </NuxtLayout>
   </div>
 </template>
 
 <style>
+html, body {
+  background:#f7f6f2
+}
 .custom-inter {
   font-feature-settings: "calt", "ss02", "ss01", "ss03", "cv02", "cv03", "cv04", "cv11";
 }
-.linear-bg {
-  --opacity: 0.35;
-  --size: 25px;
-    background-size: var(--size) var(--size);
-  background-image:
-    linear-gradient(to right, hsl(50 0% 85% / var(--opacity)) 1px, transparent 1px),
-    linear-gradient(to bottom, hsl(50 0% 85% / var(--opacity)) 1px, transparent 1px);
-}
-.dark .linear-bg {
-  --opacity: 0.50;
-  background-image:
-    linear-gradient(to right, hsl(50 0% 10% / var(--opacity)) 1px, transparent 1px),
-    linear-gradient(to bottom, hsl(50 0% 10% / var(--opacity)) 1px, transparent 1px);
-}
+
 @keyframes enter {
   0% {
     opacity: 0;

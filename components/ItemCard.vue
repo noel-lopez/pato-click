@@ -39,20 +39,22 @@ function start() {
 
 <template>
   <div>
-    <div class="flex gap-3 mb-2">
+    <div class="flex gap-4 mb-2">
       <nuxt-img :src="`/items/${img}`" :alt="name" width="64" />
       <div>
         <div class="flex  items-center justify-between gap-2">
-          <h2 class="text-lg font-bold">
+          <h2 class="text-2xl font-bold text-yellow-950">
             {{ name }}
           </h2>
           <span
-            class="bg-yellow-200 text-yellow-900 border border-yellow-300 rounded-full px-3 py-1 font-semibold text-xs"
+            class="bg-yellow-200 text-yellow-900 border border-yellow-300 rounded-full px-3 py-1 font-semibold text-lg"
           >
             lvl {{ 29 }}
           </span>
         </div>
-        <p>{{ description }}</p>
+        <p class="text-lg">
+          {{ description }}
+        </p>
       </div>
     </div>
     <div class="flex gap-1">
@@ -69,10 +71,10 @@ function start() {
         </div>
       </div>
       <div
-        class="bg-amber-300 p-4 rounded-xl shadow-[0_4px_0_#cbbf6e]  active:translate-y-1 active:!shadow-none select-none"
+        class="bg-amber-300 p-4 font-headings text-2xl rounded-xl shadow-[0_4px_0_#cbbf6e]  active:translate-y-1 active:!shadow-none select-none"
         aria-label="Start farming"
       >
-        x10
+        ×10
       </div>
     </div>
   </div>
