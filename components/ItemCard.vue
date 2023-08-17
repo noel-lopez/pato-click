@@ -63,7 +63,7 @@ function start() {
         aria-label="Start farming" @click="start"
       >
         <div v-if="!isAutomatic" class="font-medium h-6 bg-green-300 rounded-lg overflow-hidden relative">
-          <div class="h-full bg-yellow-50" :style="{ transform: `translateX(${percentage * 320}px)` }" />
+          <div class="h-full bg-yellow-50" :style="{ transform: `translateX(${percentage * 100}%)` }" />
           <span class="absolute top-0 left-1/2 -translate-x-1/2">${{ numberToString(gain) }}</span>
         </div>
         <div v-else class="h-5 bg-green-400 progress-bar-striped rounded-lg overflow-hidden relative">
