@@ -153,87 +153,87 @@ export default defineAppConfig({
       cost: 100_000_000_000,
     },
   },
-  upgrades: [
-    {
+  upgrades: {
+    food_1: {
       item: 'food',
       name: 'Comida de calidad',
       description: 'Aumenta la eficiencia de la comida de los patos x3',
       cost: 250_000,
       effect: 3,
     },
-    {
+    lily_1: {
       item: 'lily',
       name: 'Nenúfares ergonómicos',
       description: 'Aumenta la eficiencia de los nenúfares x3',
       cost: 500_000,
       effect: 3,
     },
-    {
+    divingKit_1: {
       item: 'divingKit',
       name: 'Equipo de buceo de calidad',
       description: 'Aumenta la eficiencia del equipo de buceo x3',
       cost: 1_000_000,
       effect: 3,
     },
-    {
+    lotus_1: {
       item: 'lotus',
       name: 'Flores de loto despampanantes',
       description: 'Aumenta la eficiencia de las flores de loto x3',
       cost: 5_000_000,
       effect: 3,
     },
-    {
+    frog_1: {
       item: 'frog',
       name: 'Ranas de la suerte',
       description: 'Aumenta la eficiencia de las ranas x3',
       cost: 10_000_000,
       effect: 3,
     },
-    {
+    koi_1: {
       item: 'koi',
       name: 'Peces koi gigantes',
       description: 'Aumenta la eficiencia de los peces koi x3',
       cost: 25_000_000,
       effect: 3,
     },
-    {
+    fountain_1: {
       item: 'fountain',
       name: 'Fuentes para patos de 50L',
       description: 'Aumenta la eficiencia de las fuentes para patos x3',
       cost: 500_000_000,
       effect: 3,
     },
-    {
+    lantern_1: {
       item: 'lantern',
       name: 'Farolillos de lujo',
       description: 'Aumenta la eficiencia de los farolillos x3',
       cost: 10_000_000_000,
       effect: 3,
     },
-    {
+    thermalBath_1: {
       item: 'thermalBath',
       name: 'Baños termales calentitos',
       description: 'Aumenta la eficiencia de los baños termales x3',
       cost: 50_000_000_000,
       effect: 3,
     },
-    {
+    house_1: {
       item: 'house',
       name: 'Mansiones para patos',
       description: 'Aumenta la eficiencia de las casas para patos x3',
       cost: 250_000_000_000,
       effect: 3,
     },
-    {
+    pond_1: {
       item: 'ALL',
       name: 'Estanque renovado',
       description: 'Aumenta la eficiencia de todos los objetos x3',
       cost: 1_000_000_000_000,
       effect: 3,
     },
-  ],
+  },
   achievements: {
-    currency: {
+    cash: {
       100: {
         name: 'Aspirante a patodólars',
         description: 'Consigue tus primeras 100 patomonedas',
@@ -271,164 +271,164 @@ export default defineAppConfig({
         description: 'Consigue 1 trillón de patomonedas',
       },
     },
-    item: {
-      food25: {
+    itemLevel: {
+      food_25: {
         name: 'Festín patoso',
         description: 'Nivel 25 de Panecillos!',
       },
-      food50: {
+      food_50: {
         name: 'Banquete acuático',
         description: 'Nivel 50 de Panecillos!',
       },
-      food100: {
+      food_100: {
         name: 'Maestro Chef de Patos',
         description: 'Nivel 100 de Panecillos!',
       },
-      food200: {
+      food_200: {
         name: 'Pato Gourmet',
         description: 'Nivel 200 de Panecillos!',
       },
-      lily25: {
+      lily_25: {
         name: 'Salto inicial',
         description: 'Nivel 25 de Nenúfar!',
       },
-      lily50: {
+      lily_50: {
         name: 'Paseo Flotante',
         description: 'Nivel 50 de Nenúfar!',
       },
-      lily100: {
+      lily_100: {
         name: 'Jardín de Patos',
         description: 'Nivel 100 de Nenúfar!',
       },
-      lily200: {
+      lily_200: {
         name: 'Maestro de los estanques',
         description: 'Nivel 200 de Nenúfar!',
       },
-      divingKit25: {
+      divingKit_25: {
         name: 'Buceo Inicial',
         description: 'Nivel 25 de Equipo de buceo!',
       },
-      divingKit50: {
+      divingKit_50: {
         name: 'Submarinista Patoso',
         description: 'Nivel 50 de Equipo de buceo!',
       },
-      divingKit100: {
+      divingKit_100: {
         name: 'Ducktonauta acuático',
         description: 'Nivel 100 de Equipo de buceo!',
       },
-      divingKit200: {
+      divingKit_200: {
         name: 'Explorador subacuático',
         description: 'Nivel 200 de Equipo de buceo!',
       },
-      lotus25: {
+      lotus_25: {
         name: 'Loto Naciente',
         description: 'Nivel 25 de Flor de loto!',
       },
-      lotus50: {
+      lotus_50: {
         name: 'Jardín floral',
         description: 'Nivel 50 de Flor de loto!',
       },
-      lotus100: {
+      lotus_100: {
         name: 'Cultivador de paz',
         description: 'Nivel 100 de Flor de loto!',
       },
-      lotus200: {
+      lotus_200: {
         name: 'Emperador del estanque',
         description: 'Nivel 200 de Flor de loto!',
       },
-      frog25: {
+      frog_25: {
         name: 'Pato saltarín',
         description: 'Ranita nivel 25!',
       },
-      frog50: {
+      frog_50: {
         name: 'Amigo anfibio',
         description: 'Ranita nivel 50!',
       },
-      frog100: {
+      frog_100: {
         name: 'Soberano de los sapos',
         description: 'Ranita nivel 100!',
       },
-      frog200: {
+      frog_200: {
         name: 'Reino de los saltos',
         description: 'Ranita nivel 200!',
       },
-      koi25: {
+      koi_25: {
         name: 'Estanque oriental',
         description: 'Nivel 25 de Peces koi!',
       },
-      koi50: {
+      koi_50: {
         name: 'Acuario viviente',
         description: 'Nivel 50 de Peces koi!',
       },
-      koi100: {
+      koi_100: {
         name: 'Zen acuático',
         description: 'Nivel 100 de Peces koi!',
       },
-      koi200: {
+      koi_200: {
         name: 'Dragón dorado',
         description: 'Nivel 200 de Peces koi!',
       },
-      fountain25: {
+      fountain_25: {
         name: 'Gotas de diversión',
         description: 'Nivel 25 de Fuente Aleteo!',
       },
-      fountain50: {
+      fountain_50: {
         name: 'Parque acuático',
         description: 'Nivel 50 de Fuente Aleteo!',
       },
-      fountain100: {
+      fountain_100: {
         name: 'Cascada de patos',
         description: 'Nivel 100 de Fuente Aleteo!',
       },
-      fountain200: {
+      fountain_200: {
         name: 'Maestro de las aguas',
         description: 'Nivel 200 de Fuente Aleteo!',
       },
-      lantern25: {
+      lantern_25: {
         name: 'Iluminador nocturno',
         description: 'Nivel 25 de Farolillos!',
       },
-      lantern50: {
+      lantern_50: {
         name: 'Sendero Luminoso',
         description: 'Nivel 50 de Farolillos!',
       },
-      lantern100: {
+      lantern_100: {
         name: 'Festival de luces',
         description: 'Nivel 100 de Farolillos!',
       },
-      lantern200: {
+      lantern_200: {
         name: 'Maestro de la luz',
         description: 'Nivel 200 de Farolillos!',
       },
-      thermalBath25: {
+      thermalBath_25: {
         name: 'Relax acuático',
         description: 'Nivel 25 de Baño termal!',
       },
-      thermalBath50: {
+      thermalBath_50: {
         name: 'Spa de plumitas',
         description: 'Nivel 50 de Baño termal!',
       },
-      thermalBath100: {
+      thermalBath_100: {
         name: 'Ducktástico Descanso',
         description: 'Nivel 100 de Baño termal!',
       },
-      thermalBath200: {
+      thermalBath_200: {
         name: 'Maestro del baño',
         description: 'Nivel 200 de Baño termal!',
       },
-      house25: {
+      house_25: {
         name: 'Pato de alquiler',
         description: 'Nivel 25 de Casita patuna!',
       },
-      house50: {
+      house_50: {
         name: 'Hogar acolchado',
         description: 'Nivel 50 de Casita patuna!',
       },
-      house100: {
+      house_100: {
         name: 'Nido de Comodidad',
         description: 'Nivel 100 de Casita patuna!',
       },
-      house200: {
+      house_200: {
         name: 'Palacio de plumas',
         description: 'Nivel 200 de Casita patuna!',
       },

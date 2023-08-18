@@ -1,32 +1,29 @@
 export interface BaseItem {
-  /** Name of the item */
   name: string
-  /** Description of the item */
   description: string
-  /** Relative image path of the item */
   img: string
 }
 
 export interface ItemConfig extends BaseItem {
-  /** cost per item  */
   costBase: number
-  /** growth per item  */
   rateGrowth: number
   time: number
   revenueBase: number
 }
+
+export type ItemKey = 'food' | 'lily' | 'divingKit' | 'lotus' | 'frog' | 'koi' | 'fountain' | 'lantern' | 'thermalBath' | 'house'
 
 interface ManagersConfig extends BaseItem {
   cost: number
 }
 
 interface UpgradesConfig extends Omit<BaseItem, 'img'> {
-  item: string
+  item: ItemKey | 'ALL'
   cost: number
   effect: number
 }
 
-type AchievementType = 'currency' | 'item' | 'easteregg' | 'rare'
+export type AchievementType = 'cash' | 'itemLevel' | 'easteregg' | 'rare'
 
 interface AchievementsConfig extends Omit<BaseItem, 'img'> {
 }
@@ -37,15 +34,17 @@ interface SkinsConfig extends BaseItem {
 declare module "nuxt/schema" {
   interface AppConfigInput {
     items: {
-      [itemName: string]: ItemConfig
+      [itemName: ItemKey]: ItemConfig
     },
     managers: {
       [K in keyof AppConfigInput['items']]: ManagersConfig
     }
-    upgrades: Array<UpgradesConfig>
+    upgrades: {
+      [upgradeId: string]: UpgradesConfig
+    }
     achievements: {
-      [T in AchievementType]: {
-        [achievementName: string]: AchievementsConfig
+      [achievementType in AchievementType]: {
+        [achievementId: string]: AchievementsConfig
       }
     }
     skins: {
