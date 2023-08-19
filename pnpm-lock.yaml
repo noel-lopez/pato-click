@@ -8,6 +8,9 @@ devDependencies:
   '@antfu/eslint-config':
     specifier: ^0.40.2
     version: 0.40.2(eslint@8.47.0)(typescript@5.1.6)
+  '@julr/unocss-preset-heropatterns':
+    specifier: ^1.0.2
+    version: 1.0.2(unocss@0.55.0)
   '@nuxt/devtools':
     specifier: latest
     version: 0.8.0(nuxt@3.6.5)(vite@4.4.9)
@@ -1038,6 +1041,16 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
+    dev: true
+
+  /@julr/unocss-preset-heropatterns@1.0.2(unocss@0.55.0):
+    resolution: {integrity: sha512-70HqVl23auu7Qrkkk9ULszxW5BXx3pF9H1209Vc1R0fmEitBYP6zwRdj92vGgUerS9/yCtHBpA58gYroDC9OHQ==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      unocss: '>= 0.31.13 < 1'
+    dependencies:
+      '@unocss/preset-mini': 0.52.7
+      unocss: 0.55.0(@unocss/webpack@0.55.0)(postcss@8.4.27)(vite@4.4.9)
     dev: true
 
   /@mapbox/node-pre-gyp@1.0.11:
@@ -2168,8 +2181,18 @@ packages:
       unconfig: 0.3.10
     dev: true
 
+  /@unocss/core@0.52.7:
+    resolution: {integrity: sha512-dZonrlfu33SkUMsZXlsyYSM79tr2nLer/hBEU2ZaemRik2KchxIUNlZV6kX1f1k3m+gEtVQOyx1MImpgLS8PWg==}
+    dev: true
+
   /@unocss/core@0.55.0:
     resolution: {integrity: sha512-TcTugpuhsv6OwMsP3iFIG8FVc9N5JzkojIGNAKF8I2WBftZ//3QcpEHiHc1mH3MlPYfJgUvCcT6/Gad55qmHzg==}
+    dev: true
+
+  /@unocss/extractor-arbitrary-variants@0.52.7:
+    resolution: {integrity: sha512-nJ4iE7nIRpoOIQfD8S58yG4qJd6AhVPEfEOf7ksX1u8xLf71rrBIojwraRXvv7aPqNdZiWvXdh/znpA/QC5b9w==}
+    dependencies:
+      '@unocss/core': 0.52.7
     dev: true
 
   /@unocss/extractor-arbitrary-variants@0.55.0:
@@ -2238,6 +2261,13 @@ packages:
       ofetch: 1.1.1
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@unocss/preset-mini@0.52.7:
+    resolution: {integrity: sha512-c5VRzPwyAmIBWwz2ufEboYwHGiheG+V9SCmJJLHlu/gcW5KndFsxoeJPE6nOfXVmbx4AGq/rkzV35ZXtH8Iecw==}
+    dependencies:
+      '@unocss/core': 0.52.7
+      '@unocss/extractor-arbitrary-variants': 0.52.7
     dev: true
 
   /@unocss/preset-mini@0.55.0:

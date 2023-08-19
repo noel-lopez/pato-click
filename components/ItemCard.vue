@@ -58,7 +58,7 @@ function start() {
     </div>
     <div class="flex gap-1">
       <div
-        class="w-full bg-yellow-200 p-4 rounded-xl shadow-[0_4px_0_#cbbf6e]  active:translate-y-1 active:!shadow-none select-none"
+        class="w-full bg-yellow-200 bg-hero-rain-yellow-400 p-4 rounded-xl shadow-[0_4px_0_#cbbf6e]  active:translate-y-1 active:!shadow-none select-none"
         aria-label="Start farming" @click="start"
       >
         <div v-if="!isAutomatic" class="font-medium h-6 bg-green-300 rounded-lg overflow-hidden relative">

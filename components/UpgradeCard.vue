@@ -4,40 +4,30 @@ import type { UpgradeConfig } from '../index.d.ts'
 const props = defineProps<UpgradeConfig>()
 const { items } = useAppConfig()
 const isBlocked = Math.random() < 0.5
-const buttonClass = isBlocked ? 'bg-stone-400 border-stone-8/20 text-stone-6' : 'bg-teal-5 border-teal-8/20 text-white'
+const buttonClass = isBlocked ? 'bg-stone-400 border-stone-8/20 text-stone-6' : 'bg-emerald-5 border-emerald-8/20 text-white'
 const { numberToString } = useFormat()
 </script>
 
 <template>
-  <div class="flex pr-5 items-center">
-    <nuxt-img class="z-1 aspect-square" :alt="name" width="96" :src="props.item === 'ALL' ? 'https://api.dicebear.com/6.x/open-peeps/svg' : `/items/${items[props.item].img}`" />
-    <div class="upgradeInfoCard rounded-lg flex flex-col justify-evenly items-center w-lg py-1 bg-white/80 ml[-50px]">
-      <h2 class="text-2xl font-bold text-teal-6/80 font-italic">
+  <div class="-skew-0 flex m-1 bg-emerald-50 transition-colors hover:bg-white items-center relative isolate border-white border-2 py-1 shadow-[0_0_0_2px_#000] rounded-sm">
+    <div class="-z-1 bg-mask-hero-heavy-rain bg-gradient-to-r from-emerald-300 via-transparent to-transparent absolute h-full w-full" />
+    <nuxt-img class="z-1 scale-150  translate-x-3 mr-12" :alt="name" width="96" :src="props.item === 'ALL' ? 'https://api.dicebear.com/6.x/open-peeps/svg' : `/items/${items[props.item].img}`" />
+    <div class="flex-1">
+      <h2 class="uppercase font-bold italic text-3xl text-emerald-700">
         {{ name }}
       </h2>
+      <p class="text-emerald-600 text-xl">
+        $ {{ numberToString(props.cost) }}
+      </p>
       <h3 class="text-lg">
         {{ description }} x{{ effect }}
       </h3>
-      <p class="text-lg font-bold">
-        $ {{ numberToString(props.cost) }}
-      </p>
     </div>
-    <button class="diagonal-button ml[-30px] px-2 py-3 text-2xl font-bold border-4" :class="buttonClass">
+    <button
+      class="px-3 py-4 rotate-5 translate-y--8 hover:scale-110 transition-transform text-2xl translate-x-4 border-4  bg-emerald-400 text-white relative font-bold border-emerald-600" :class="{ grayscale: isBlocked }"
+    >
       Comprar!
+      <div class="-z-1 bg-mask-hero-endless-clouds bg-emerald-300 top-0 left-0 absolute h-full w-full" />
     </button>
   </div>
 </template>
-
-<style scoped>
-  .upgradeInfoCard {
-    clip-path: polygon(0 50%, 10% 0, 100% 0, 100% 100%, 10% 100%, 0 50%);
-  }
-
-  .diagonal-button {
-    transform: skewX(15deg);
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
-</style>
