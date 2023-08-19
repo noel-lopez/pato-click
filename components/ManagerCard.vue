@@ -4,33 +4,36 @@ import type { ManagerConfig } from '../index.d.ts'
 const props = defineProps<ManagerConfig>()
 const randomBoolean = () => Math.random() < 0.5
 const isBlocked = randomBoolean()
-const buttonClass = isBlocked ? 'bg-stone-400 border-stone-8/20 text-stone-6' : 'bg-cyan-5 border-cyan-8/20 text-white'
 const { numberToString } = useFormat()
 </script>
 
 <template>
-  <div class="flex pr-5 items-center">
-    <nuxt-img class="z-1 aspect-square" :src="`https://api.dicebear.com/6.x/open-peeps/svg?seed=${name}`" :alt="name" width="96" />
-    <div class="managerInfoCard rounded-lg flex flex-col justify-evenly items-center w-lg bg-white/80 ml[-50px]">
-      <h2 class="text-2xl font-bold text-cyan-6/80 font-italic">
+  <div class="-skew-0 flex m-1 bg-betterblue-50 transition-colors hover:bg-white items-center relative isolate border-white border-2 py-1 shadow-[0_0_0_2px_#000] rounded-sm">
+    <div class="-z-1 bg-mask-hero-random-shapes bg-gradient-to-r from-betterblue-200 via-transparent to-transparent absolute h-full w-full" />
+    <nuxt-img class="z-1 scale-150 translate-y--5 translate-x-3 mr-9" :src="`https://api.dicebear.com/6.x/open-peeps/svg?seed=${name}`" :alt="name" width="96" />
+    <div class="flex-1">
+      <h2 class="uppercase font-bold italic text-3xl text-betterblue-700">
         {{ name }}
       </h2>
+      <p class="text-betterblue-500 text-xl">
+        $ {{ numberToString(props.cost) }}
+      </p>
       <h3 class="text-lg">
         {{ description }}
       </h3>
-      <p class="text-lg font-bold">
-        $ {{ numberToString(props.cost) }}
-      </p>
     </div>
-    <button class="diagonal-button ml[-30px] px-2 py-3 text-2xl font-bold border-4" :class="buttonClass">
+    <button
+      class="px-3 py-4 rotate-5 translate-y--8 hover:scale-110 transition-transform text-2xl translate-x-4 border-4  bg-betterblue-400 text-white relative font-bold border-betterblue-600" :class="{ grayscale: isBlocked }"
+    >
       Contratar!
+      <div class="-z-1 bg-mask-hero-endless-clouds bg-betterblue-300 top-0 left-0 absolute h-full w-full" />
     </button>
   </div>
 </template>
 
 <style scoped>
   .managerInfoCard {
-    clip-path: polygon(0 30%, 10% 0, 100% 0, 100% 100%, 10% 100%, 0 70%);
+    clip-path: polygon(0 30%, 0% 0, 100% 0, 100% 100%, 10% 100%, 0 70%);
   }
 
   .diagonal-button {

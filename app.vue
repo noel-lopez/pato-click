@@ -28,7 +28,7 @@ nuxtApp.hook('page:finish', () => {
 
 <style>
 html, body {
-  background:#f7f6f2
+ background:#fff4e0
 }
 .custom-inter {
   font-feature-settings: "calt", "ss02", "ss01", "ss03", "cv02", "cv03", "cv04", "cv11";
