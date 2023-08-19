@@ -10,8 +10,7 @@ const gain = computed(() => props.revenueBase * (props.rateGrowth ** 1))
 const percentage = ref(0) // percentage of the bar
 const isAutomatic = ref(false) // if true, the bar will start again when it's complete
 
-const { currencyToString, numberToString } = useFormat()
-const formattedPercentage = computed(() => (percentage.value * 100).toFixed(2))
+const { numberToString } = useFormat()
 
 let interval: ReturnType<typeof setInterval>
 
@@ -28,7 +27,7 @@ function start() {
     if (percentage.value >= 1) {
       clearInterval(interval)
       percentage.value = 0
-      state.cash += gain.value
+      state.addCash(gain.value)
 
       if (isAutomatic.value)
         start()
