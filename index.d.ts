@@ -13,11 +13,11 @@ export interface ItemConfig extends BaseItem {
 
 export type ItemKey = 'food' | 'lily' | 'divingKit' | 'lotus' | 'frog' | 'koi' | 'fountain' | 'lantern' | 'thermalBath' | 'house'
 
-interface ManagersConfig extends BaseItem {
+export interface ManagerConfig extends BaseItem {
   cost: number
 }
 
-interface UpgradesConfig extends Omit<BaseItem, 'img'> {
+export interface UpgradeConfig extends Omit<BaseItem, 'img'> {
   item: ItemKey | 'ALL'
   cost: number
   effect: number
@@ -25,10 +25,10 @@ interface UpgradesConfig extends Omit<BaseItem, 'img'> {
 
 export type AchievementType = 'cash' | 'itemLevel' | 'easteregg' | 'rare'
 
-interface AchievementsConfig extends Omit<BaseItem, 'img'> {
+export interface AchievementsConfig extends Omit<BaseItem, 'img'> {
 }
 
-interface SkinsConfig extends BaseItem {
+export interface SkinsConfig extends BaseItem {
 }
 
 declare module "nuxt/schema" {
@@ -37,10 +37,10 @@ declare module "nuxt/schema" {
       [itemName: ItemKey]: ItemConfig
     },
     managers: {
-      [K in keyof AppConfigInput['items']]: ManagersConfig
+      [K in keyof AppConfigInput['items']]: ManagerConfig
     }
     upgrades: {
-      [upgradeId: string]: UpgradesConfig
+      [upgradeId: string]: UpgradeConfig
     }
     achievements: {
       [achievementType in AchievementType]: {
