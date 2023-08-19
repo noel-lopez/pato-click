@@ -20,7 +20,7 @@ nuxtApp.hook('page:finish', () => {
       <div class="mb-auto col-span-3 mx-auto w-full">
         <SeoKit />
         <OgImageStatic component="PageOgImage" />
-        <NuxtPage class="" />
+        <NuxtPage class="" keepalive />
       </div>
     </NuxtLayout>
   </div>
