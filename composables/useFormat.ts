@@ -1,27 +1,27 @@
 const currencyBreakpoints = [
   {
     min: 1_000_000,
-    name: 'millones',
+    name: ['millón', 'millones'],
   },
   {
     min: 1_000_000_000,
-    name: 'mil millones',
+    name: ['mil millones', 'mil millones'],
   },
   {
     min: 1_000_000_000_000,
-    name: 'billones',
+    name: ['billón', 'billones'],
   },
   {
     min: 1_000_000_000_000_000,
-    name: 'trillones',
+    name: ['trillón', 'trillones'],
   },
   {
     min: 1_000_000_000_000_000_000,
-    name: 'cuatrillones',
+    name: ['cuatrillón', 'cuatrillones'],
   },
   {
     min: 1_000_000_000_000_000_000_000,
-    name: 'quintillones',
+    name: ['quintillón', 'quintillones'],
   },
 ]
 
@@ -47,7 +47,8 @@ export function useFormat() {
       const breakpoint = currencyBreakpoints.findLast(b => value >= b.min)
       if (breakpoint && value / breakpoint.min < 1000) {
         const amount = value / breakpoint.min
-        return `${amount.toLocaleString('es-ES', { maximumFractionDigits: 3, minimumFractionDigits: 0 })} ${breakpoint.name}`
+        const breakPointName = breakpoint.name[amount < 1.001 ? 0 : 1]
+        return `${amount.toLocaleString('es-ES', { maximumFractionDigits: 3, minimumFractionDigits: 0 })} ${breakPointName}`
       }
       else {
         // return value in cientific notation
@@ -85,7 +86,8 @@ export function useFormat() {
       const breakpoint = currencyBreakpoints.findLast(b => value >= b.min)
       if (breakpoint && value / breakpoint.min < 1000) {
         const amount = value / breakpoint.min
-        return `${amount.toLocaleString('es-ES', { maximumFractionDigits: 3, minimumFractionDigits: 0 })} ${breakpoint.name}`
+        const breakPointName = breakpoint.name[amount < 1.001 ? 0 : 1]
+        return `${amount.toLocaleString('es-ES', { maximumFractionDigits: 3, minimumFractionDigits: 0 })} ${breakPointName}`
       }
       else {
         // return value in cientific notation
