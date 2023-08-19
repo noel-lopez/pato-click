@@ -8,6 +8,11 @@ const items = [
   {
     label: 'Managers',
     href: '/managers',
+    icon: 'i-mingcute-briefcase-line',
+  },
+  {
+    label: 'Mejoras',
+    href: '/upgrades',
     icon: 'i-mingcute-pig-money-line',
   },
   {
@@ -15,11 +20,11 @@ const items = [
     href: '/stats',
     icon: 'i-mingcute-chart-line-line',
   },
-  {
-    label: 'Configuración',
-    href: '/settings',
-    icon: 'i-mingcute-settings-3-line',
-  },
+  // {
+  //   label: 'Configuración',
+  //   href: '/settings',
+  //   icon: 'i-mingcute-settings-3-line',
+  // },
   {
     label: 'Acerca de',
     href: '/about',
