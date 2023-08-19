@@ -4,15 +4,14 @@ import type { UpgradeConfig } from '../index.d.ts'
 const props = defineProps<UpgradeConfig>()
 const { items } = useAppConfig()
 const isBlocked = Math.random() < 0.5
-const buttonClass = isBlocked ? 'bg-stone-400 border-stone-8/20 text-stone-6' : 'bg-emerald-5 border-emerald-8/20 text-white'
 const { numberToString } = useFormat()
 </script>
 
 <template>
   <div class="-skew-0 flex m-1 bg-emerald-50 transition-colors hover:bg-white items-center relative isolate border-white border-2 py-1 shadow-[0_0_0_2px_#000] rounded-sm">
     <div class="-z-1 bg-mask-hero-heavy-rain bg-gradient-to-r from-emerald-300 via-transparent to-transparent absolute h-full w-full" />
-    <nuxt-img class="z-1 scale-150  translate-x-3 mr-12" :alt="name" width="96" :src="props.item === 'ALL' ? 'https://api.dicebear.com/6.x/open-peeps/svg' : `/items/${items[props.item].img}`" />
-    <div class="flex-1">
+    <nuxt-img class="z-1 absolute -translate-x-3 mr-12" :alt="name" width="150" :src="props.item === 'ALL' ? 'https://api.dicebear.com/6.x/open-peeps/svg' : `/items/${items[props.item].img}`" />
+    <div class="flex flex-1 flex-col ml-40">
       <h2 class="uppercase font-bold italic text-3xl text-emerald-700">
         {{ name }}
       </h2>
