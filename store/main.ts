@@ -15,7 +15,7 @@ export const useStore = defineStore('main', () => {
   }
 
   // STATE
-  const cash = ref(4)
+  const userCash = ref(4)
   const userSkin = ref<SkinId>('default')
   const itemLevels = ref<ItemLevelsRef>({
     food: 0,
@@ -54,8 +54,9 @@ export const useStore = defineStore('main', () => {
     nextItemLevelCost: calcNextItemLevelCost,
     getLevelBreakpointsList,
   } = useMoneyMaths()
-
+  const { currencyToString } = useFormat()
   // BASIC GETTERS
+  const cash = computed(() => currencyToString(userCash.value))
   const itemLevel = (itemId: ItemKey) => itemLevels.value[itemId]
   const managerIsPurchased = (managerId: ItemKey) => purchasedManagers.value.includes(managerId)
   const upgradeIsPurchased = (upgradeId: UpgradeId) => purchasedUpgrades.value.includes(upgradeId)
@@ -134,11 +135,11 @@ export const useStore = defineStore('main', () => {
 
   // ACTIONS
   const addCash = (amount: number) => {
-    cash.value += amount
+    userCash.value += amount
   }
 
   const spendCash = (amount: number) => {
-    cash.value -= amount
+    userCash.value -= amount
   }
 
   const purchaseItemLevel = (itemName: ItemKey) => {

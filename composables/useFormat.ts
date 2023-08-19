@@ -41,7 +41,7 @@ export function useFormat() {
    */
   function currencyToString(value: number) {
     if (value < 1_000_000_000) {
-      return value.toLocaleString('es-ES', { maximumFractionDigits: 2, minimumFractionDigits: 2 })
+      return value.toLocaleString('es-ES', { maximumFractionDigits: 2, minimumFractionDigits: 2, useGrouping: true })
     }
     else {
       const breakpoint = currencyBreakpoints.findLast(b => value >= b.min)
@@ -79,7 +79,7 @@ export function useFormat() {
    */
   function numberToString(value: number) {
     if (value < 1_000_000) {
-      return value.toLocaleString('es-ES', { maximumFractionDigits: 2, minimumFractionDigits: 2 })
+      return value.toLocaleString('es-ES', { maximumFractionDigits: 2, minimumFractionDigits: 2, useGrouping: true })
     }
     else {
       const breakpoint = currencyBreakpoints.findLast(b => value >= b.min)
