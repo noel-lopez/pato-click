@@ -138,7 +138,7 @@ export default defineAppConfig({
       name: 'Manager de farolillos',
       description: 'Encargado de instalar farolillos en el estanque',
       img: 'manager_lantern.png',
-      cost: 555_555_555,
+      cost: 555_555_000,
     },
     thermalBath: {
       name: 'Manager de baños termales',
