@@ -13,6 +13,7 @@ export const useStore = defineStore('main', () => {
   type ItemMultipliersRef = {
     [itemId in ItemKey]: number[]
   }
+  const howMuch = ref<1 | 10 | 100 | 0xDEFECA>(1)
 
   // STATE
   const userCash = ref(4)
@@ -179,6 +180,7 @@ export const useStore = defineStore('main', () => {
 
   // RETURN
   return {
+    howMuch,
     cash,
     userSkin,
     itemLevel,
