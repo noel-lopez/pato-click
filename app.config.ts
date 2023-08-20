@@ -93,26 +93,26 @@ export default defineAppConfig({
   },
   managers: {
     food: {
-      name: 'Manager de comida',
-      description: 'Encargado de alimentar automáticamente',
+      name: 'Antony Pepperony',
+      description: 'Encargado de alimentar a todos los patos',
       img: 'manager_food.png',
       cost: 1_000,
     },
     lily: {
-      name: 'Manager de nenúfares',
-      description: 'Encargado de cuidar los nenúfares',
+      name: 'Lily Pily',
+      description: 'Encargada de cuidar los nenúfares',
       img: 'manager_lily.png',
       cost: 15_000,
     },
     divingKit: {
-      name: 'Manager de equipo de buceo',
+      name: 'Lucas Bucez',
       description: 'Encargado repartir equipos de buceo a los patos',
       img: 'manager_diving_kit.png',
       cost: 100_000,
     },
     lotus: {
-      name: 'Manager de flores de loto',
-      description: 'Encargado de cuidar las flores de loto',
+      name: 'Rosalinda',
+      description: 'Encargada de cuidar las flores de loto',
       img: 'manager_lotus.png',
       cost: 500_000,
     },
