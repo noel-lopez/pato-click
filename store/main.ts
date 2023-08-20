@@ -13,10 +13,10 @@ export const useStore = defineStore('main', () => {
   type ItemMultipliersRef = {
     [itemId in ItemKey]: number[]
   }
-  const howMuch = ref<1 | 10 | 100 | 0xDEFECA>(1)
 
   // STATE
   const userCash = ref(4)
+  const buyMode = ref<1 | 10 | 100 | 0xDEFECA>(1)
   const userSkin = ref<SkinId>('default')
   const itemLevels = ref<ItemLevelsRef>({
     food: 0,
@@ -53,6 +53,8 @@ export const useStore = defineStore('main', () => {
     itemRevenue: calcItemRevenue,
     itemRevenuePerSecond: calcItemRevenuePerSecond,
     nextItemLevelCost: calcNextItemLevelCost,
+    multipleItemLevelCost: calcMultipleItemLevelCost,
+    maxBuyableLevels: calcMaxBuyableLevels,
     getLevelBreakpointsList,
   } = useMoneyMaths()
   const { currencyToString } = useFormat()
@@ -129,10 +131,25 @@ export const useStore = defineStore('main', () => {
     return calcItemRevenuePerSecond(revenue, item.time)
   }
 
+  const itemLevelQuantityToBuy = (itemName: ItemKey) => {
+    const item = itemConfig(itemName)
+    const level = itemLevel(itemName)
+    if (buyMode.value === 1)
+      return 1
+    if (buyMode.value === 0xDEFECA) {
+      const maxBuyableLevels = calcMaxBuyableLevels(level, item.costBase, item.rateGrowth, userCash.value)
+      return maxBuyableLevels
+    }
+    return buyMode.value
+  }
+
   const nextItemLevelCost = (itemName: ItemKey) => {
     const item = itemConfig(itemName)
     const level = itemLevel(itemName)
-    return calcNextItemLevelCost(level, item.costBase, item.rateGrowth)
+    if (buyMode.value === 1)
+      return calcNextItemLevelCost(level, item.costBase, item.rateGrowth)
+    const quantity = itemLevelQuantityToBuy(itemName)
+    return calcMultipleItemLevelCost(level, item.costBase, item.rateGrowth, quantity)
   }
 
   // ACTIONS
@@ -149,7 +166,8 @@ export const useStore = defineStore('main', () => {
     if (!isPurchaseable(cost))
       return
     spendCash(cost)
-    itemLevels.value[itemName]++
+    const levelsPurchased = itemLevelQuantityToBuy(itemName)
+    itemLevels.value[itemName] += levelsPurchased
   }
 
   const purchaseManager = (managerId: ItemKey) => {
@@ -187,7 +205,7 @@ export const useStore = defineStore('main', () => {
 
   // RETURN
   return {
-    howMuch,
+    buyMode,
     cash,
     isPurchaseable,
     userSkin,
@@ -204,6 +222,7 @@ export const useStore = defineStore('main', () => {
     itemRevenue,
     itemRevenuePerSecond,
     nextItemLevelCost,
+    itemLevelQuantityToBuy,
     addCash,
     purchaseItemLevel,
     purchaseManager,

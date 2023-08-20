@@ -3,13 +3,23 @@ import type { ItemConfig, ItemKey } from '../index.d.ts'
 import { useStore } from '~/store/main'
 
 const props = defineProps<ItemConfig & { itemKey: string }>()
-const { multipleItemLevelCost } = useMoneyMaths()
 const state = useStore()
 
-const itemLevel = state.itemLevel(props.itemKey as ItemKey)
-const gain = computed(() => props.revenueBase * (props.rateGrowth ** 1))
+const itemLevel = computed(() => state.itemLevel(props.itemKey as ItemKey))
+const isAutomatic = computed(() => state.managerIsPurchased(props.itemKey as ItemKey))
+const isPerSec = computed(() => isAutomatic.value === true && itemLevel.value >= 100)
 const percentage = ref(0) // percentage of the bar
-const isAutomatic = ref(false) // if true, the bar will start again when it's complete
+
+const gain = computed(() => !isPerSec.value ? state.itemRevenue(props.itemKey as ItemKey) : state.itemRevenuePerSecond(props.itemKey as ItemKey))
+const progressBarTime = computed(() => !isPerSec.value ? props.time : 1000)
+const purchaseQuantity = computed(() => state.itemLevelQuantityToBuy(props.itemKey as ItemKey))
+const purchaseCost = computed(() => state.nextItemLevelCost(props.itemKey as ItemKey))
+const purchaseBlocked = computed(() => !state.isPurchaseable(purchaseCost.value))
+
+watch(isAutomatic, (isAuto) => {
+  if (isAuto === true && percentage.value === 0)
+    start()
+})
 
 const { numberToString } = useFormat()
 
@@ -24,7 +34,7 @@ function start() {
 
   interval = setInterval(() => {
     const elapsedTime = Date.now() - startTime
-    percentage.value = Math.min(elapsedTime / props.time, 1)
+    percentage.value = Math.min(elapsedTime / progressBarTime.value, 1)
     if (percentage.value >= 1) {
       clearInterval(interval)
       percentage.value = 0
@@ -50,7 +60,7 @@ function start() {
             class="bg-yellow-200 text-yellow-900 border border-yellow-300 rounded-full px-3 py-1 font-semibold text-lg"
           >
             lvl
-            {{ state.itemLevel(props.itemKey as ItemKey) }}
+            {{ itemLevel }}
           </span>
         </div>
         <p class="text-lg">
@@ -64,21 +74,22 @@ function start() {
         class="w-full bg-yellow-200 bg-hero-rain-yellow-400 p-2 rounded-xl border-white border-2 shadow-[0_0_0_2px_#a89b49] rounded-sm drop-shadow-[0_4px_0_#cbbf6e]  active:translate-y-1 active:!drop-shadow-none select-none"
         aria-label="Start farming" @click="start"
       >
-        <div v-if="!isAutomatic" class="font-medium text-lg h-8 bg-green-300 rounded-lg overflow-hidden relative">
+        <div v-if="!isPerSec" class="font-medium text-lg h-8 bg-green-300 rounded-lg overflow-hidden relative">
           <div class="h-full bg-yellow-50" :style="{ transform: `translateX(${percentage * 100}%)` }" />
           <span class="absolute top-1 left-1/2 -translate-x-1/2">${{ numberToString(gain) }}</span>
         </div>
         <div v-else class="h-5 bg-green-400 progress-bar-striped rounded-lg overflow-hidden relative">
-          <span class="absolute top-0 left-1/2 -translate-x-1/2">{{ numberToString(gain / (time / 1000)) }} /sec</span>
+          <span class="absolute top-0 left-1/2 -translate-x-1/2">${{ numberToString(gain) }} /sec</span>
         </div>
       </div>
       <div
         class="inline-block grow bg-amber-300 border-white border-2 py-0 shadow-[0_0_0_2px_#000] rounded-sm text-xl font-headings rounded-xl shadow-[0_4px_0_#cbbf6e] active:translate-y-1 active:!shadow-none select-none min-w-[150px] text-center"
+        :class="{ grayscale: purchaseBlocked }"
         aria-label="Start farming"
         @click="state.purchaseItemLevel(props.itemKey as ItemKey)"
       >
         <div class="p-3">
-          Compra {{ state.howMuch === 0xDEFECA ? 'max' : `&times;${state.howMuch}` }} por {{ numberToString(multipleItemLevelCost(itemLevel || 1, costBase, rateGrowth, state.howMuch)) }}
+          Compra &times;{{ purchaseQuantity }} <br> ${{ numberToString(purchaseCost) }}
         </div>
       </div>
     </div>
