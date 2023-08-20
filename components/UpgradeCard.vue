@@ -15,7 +15,7 @@ const { numberToString } = useFormat()
     <div class="-z-1 bg-mask-hero-heavy-rain bg-gradient-to-r from-emerald-300 via-transparent to-transparent absolute h-full w-full" />
     <nuxt-img class="z-1 absolute -translate-x-3 mr-12" :alt="name" width="150" :src="props.item === 'ALL' ? '/upgrades/upgrade_all.png' : `/items/${staticData.items[props.item].img}`" />
     <div class="flex flex-1 flex-col ml-40">
-      <h2 class="uppercase font-bold italic text-3xl text-emerald-700">
+      <h2 class="font-bold italic text-3xl text-emerald-700">
         {{ name }}
       </h2>
       <p class="text-emerald-600 text-xl">
