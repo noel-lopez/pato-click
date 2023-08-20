@@ -1,8 +1,6 @@
 <script setup>
 import { useStore } from '~/store/main'
 
-const { upgrades } = useAppConfig()
-
 const state = useStore()
 </script>
 
@@ -20,7 +18,7 @@ const state = useStore()
       </p>
     </header>
     <ul class="grid grid-cols-1 gap-12 max-w-[700px] py-8">
-      <li v-for="upgrade in upgrades" :key="upgrade.name">
+      <li v-for="upgrade in state.unpurchasedUpgradesList" :key="upgrade.id">
         <UpgradeCard v-bind="upgrade" />
       </li>
     </ul>

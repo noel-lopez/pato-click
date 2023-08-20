@@ -58,6 +58,7 @@ export const useStore = defineStore('main', () => {
   const { currencyToString } = useFormat()
   // BASIC GETTERS
   const cash = computed(() => currencyToString(userCash.value))
+  const isPurchaseable = (cost: number) => userCash.value >= cost
   const itemLevel = (itemId: ItemKey) => itemLevels.value[itemId]
   const managerIsPurchased = (managerId: ItemKey) => purchasedManagers.value.includes(managerId)
   const upgradeIsPurchased = (upgradeId: UpgradeId) => purchasedUpgrades.value.includes(upgradeId)
@@ -145,18 +146,24 @@ export const useStore = defineStore('main', () => {
 
   const purchaseItemLevel = (itemName: ItemKey) => {
     const cost = nextItemLevelCost(itemName)
+    if (!isPurchaseable(cost))
+      return
     spendCash(cost)
     itemLevels.value[itemName]++
   }
 
   const purchaseManager = (managerId: ItemKey) => {
     const manager = managerConfig(managerId)
+    if (!isPurchaseable(manager.cost))
+      return
     spendCash(manager.cost)
     purchasedManagers.value.push(managerId)
   }
 
   const purchaseUpgrade = (upgradeId: UpgradeId) => {
     const upgrade = upgradeConfig(upgradeId)
+    if (!isPurchaseable(upgrade.cost))
+      return
     spendCash(upgrade.cost)
     purchasedUpgrades.value.push(upgradeId)
     if (upgrade.item === 'ALL') {
@@ -182,6 +189,7 @@ export const useStore = defineStore('main', () => {
   return {
     howMuch,
     cash,
+    isPurchaseable,
     userSkin,
     itemLevel,
     managerIsPurchased,
