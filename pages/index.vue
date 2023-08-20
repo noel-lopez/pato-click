@@ -8,12 +8,22 @@ const state = useStore()
 
 <template>
   <div>
-    <h1 class="font-headings font-bold text-5xl my-8 text-yellow-950">
-      ${{ state.cash }}
-    </h1>
-    <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
-      <li v-for="item in items" :key="item.name">
-        <ItemCard v-bind="item" />
+    <div class="flex justify-between  my-8">
+      <h1 class="font-headings font-bold text-5xl text-yellow-950">
+        ${{ state.cash }}
+      </h1>
+      <div class="flex gap-3">
+        <button v-for="k in 3" :key="k" @click="state.howMuch = (10 ** (k - 1))">
+          &times;{{ 10 ** (k - 1) }}
+        </button>
+        <button @click="state.howMuch = 0xDEFECA">
+          MAX
+        </button>
+      </div>
+    </div>
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-12">
+      <li v-for="(item, key) in items" :key="item.name">
+        <ItemCard v-bind="item" :item-key="key" />
       </li>
     </ul>
   </div>

@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import type { ItemConfig } from '../index.d.ts'
+import type { ItemConfig, ItemKey } from '../index.d.ts'
 import { useStore } from '~/store/main'
 
-const props = defineProps<ItemConfig>()
-
+const props = defineProps<ItemConfig & { itemKey: string }>()
+const { multipleItemLevelCost } = useMoneyMaths()
 const state = useStore()
 
+const itemLevel = state.itemLevel(props.itemKey as ItemKey)
 const gain = computed(() => props.revenueBase * (props.rateGrowth ** 1))
 const percentage = ref(0) // percentage of the bar
 const isAutomatic = ref(false) // if true, the bar will start again when it's complete
@@ -48,7 +49,8 @@ function start() {
           <span
             class="bg-yellow-200 text-yellow-900 border border-yellow-300 rounded-full px-3 py-1 font-semibold text-lg"
           >
-            lvl {{ 29 }}
+            lvl
+            {{ state.itemLevel(props.itemKey as ItemKey) }}
           </span>
         </div>
         <p class="text-lg">
@@ -56,24 +58,28 @@ function start() {
         </p>
       </div>
     </div>
-    <div class="flex gap-1">
+    <div class="flex gap-3">
       <div
-        class="w-full bg-yellow-200 bg-hero-rain-yellow-400 p-4 rounded-xl shadow-[0_4px_0_#cbbf6e]  active:translate-y-1 active:!shadow-none select-none"
+        v-if="state.itemLevel(props.itemKey as ItemKey) > 0"
+        class="w-full bg-yellow-200 bg-hero-rain-yellow-400 p-2 rounded-xl border-white border-2 shadow-[0_0_0_2px_#a89b49] rounded-sm drop-shadow-[0_4px_0_#cbbf6e]  active:translate-y-1 active:!drop-shadow-none select-none"
         aria-label="Start farming" @click="start"
       >
-        <div v-if="!isAutomatic" class="font-medium h-6 bg-green-300 rounded-lg overflow-hidden relative">
+        <div v-if="!isAutomatic" class="font-medium text-lg h-8 bg-green-300 rounded-lg overflow-hidden relative">
           <div class="h-full bg-yellow-50" :style="{ transform: `translateX(${percentage * 100}%)` }" />
-          <span class="absolute top-0 left-1/2 -translate-x-1/2">${{ numberToString(gain) }}</span>
+          <span class="absolute top-1 left-1/2 -translate-x-1/2">${{ numberToString(gain) }}</span>
         </div>
         <div v-else class="h-5 bg-green-400 progress-bar-striped rounded-lg overflow-hidden relative">
           <span class="absolute top-0 left-1/2 -translate-x-1/2">{{ numberToString(gain / (time / 1000)) }} /sec</span>
         </div>
       </div>
       <div
-        class="bg-amber-300 p-4 font-headings text-2xl rounded-xl shadow-[0_4px_0_#cbbf6e]  active:translate-y-1 active:!shadow-none select-none"
+        class="inline-block grow bg-amber-300 border-white border-2 py-0 shadow-[0_0_0_2px_#000] rounded-sm text-xl font-headings rounded-xl shadow-[0_4px_0_#cbbf6e] active:translate-y-1 active:!shadow-none select-none min-w-[150px] text-center"
         aria-label="Start farming"
+        @click="state.purchaseItemLevel(props.itemKey as ItemKey)"
       >
-        ×10
+        <div class="p-3">
+          Compra {{ state.howMuch === 0xDEFECA ? 'max' : `&times;${state.howMuch}` }} por {{ numberToString(multipleItemLevelCost(itemLevel || 1, costBase, rateGrowth, state.howMuch)) }}
+        </div>
       </div>
     </div>
   </div>
