@@ -13,12 +13,13 @@ const state = useStore()
         ${{ state.cash }}
       </h1>
       <div class="flex gap-3">
-        <button v-for="k in 3" :key="k" @click="state.howMuch = (10 ** (k - 1))">
+        <button v-for="k in 3" :key="k" @click="state.buyMode = (10 ** (k - 1))">
           &times;{{ 10 ** (k - 1) }}
         </button>
-        <button @click="state.howMuch = 0xDEFECA">
+        <!-- TODO: fix MAX mode -->
+        <!-- <button @click="state.buyMode = 0xDEFECA">
           MAX
-        </button>
+        </button> -->
       </div>
     </div>
     <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-12">
