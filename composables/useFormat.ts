@@ -41,7 +41,7 @@ export function useFormat() {
    */
   function currencyToString(value: number) {
     if (value < 1_000_000_000) {
-      return value.toLocaleString('es-ES', { maximumFractionDigits: 2, minimumFractionDigits: 2, useGrouping: true })
+      return value.toLocaleString('es-ES', { maximumFractionDigits: 2, minimumFractionDigits: 2 })
     }
     else {
       const breakpoint = currencyBreakpoints.findLast(b => value >= b.min)
@@ -79,17 +79,26 @@ export function useFormat() {
    * formatUpgradeCost(5_452_200_000_057) // 5,452 billones
    */
   function numberToString(value: number) {
-    return new Intl.NumberFormat(
-      'es-ES',
-      {
-        notation: 'compact',
-        compactDisplay: 'long',
-        minimumSignificantDigits: 4,
-        maximumSignificantDigits: 4,
-        maximumFractionDigits: 4,
-        minimumFractionDigits: 0,
-      },
-    ).format(value)
+    if (value < 1_000_000) {
+      // TODO: change this to custom function
+      return value.toLocaleString('es-ES', { maximumFractionDigits: 2, minimumFractionDigits: 2 })
+    }
+    else {
+      const breakpoint = currencyBreakpoints.findLast(b => value >= b.min)
+      if (breakpoint && value / breakpoint.min < 1000) {
+        const amount = value / breakpoint.min
+        const breakPointName = breakpoint.name[amount < 1.001 ? 0 : 1]
+        return `${amount.toLocaleString('es-ES', { maximumFractionDigits: 3, minimumFractionDigits: 0 })} ${breakPointName}`
+      }
+      else {
+        // return value in cientific notation
+        return value.toLocaleString('es-ES', {
+          notation: 'scientific',
+          maximumFractionDigits: 2,
+          minimumFractionDigits: 0,
+        })
+      }
+    }
   }
 
   /**
