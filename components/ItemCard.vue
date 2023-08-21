@@ -49,15 +49,15 @@ function start() {
 
 <template>
   <div>
-    <div class="flex gap-4 mb-2">
-      <nuxt-img :src="`/items/${img}`" :alt="name" width="64" />
+    <div class="flex items-center gap-4 mb-2" :class="{ 'grayscale opacity-75 pointer-events-none': itemLevel === 0 }">
+      <nuxt-img :src="`/items/${img}`" :alt="name" width="96" />
       <div>
-        <div class="flex  items-center justify-between gap-2">
+        <div class="flex items-center justify-between gap-2">
           <h2 class="text-2xl font-bold text-yellow-950">
             {{ name }}
           </h2>
           <span
-            class="bg-yellow-200 text-yellow-900 border border-yellow-300 rounded-full px-3 py-1 font-semibold text-lg"
+            class="px-3 py-1 text-lg font-semibold text-yellow-900 bg-yellow-200 border border-yellow-300 rounded-full"
           >
             lvl
             {{ itemLevel }}
@@ -68,30 +68,33 @@ function start() {
         </p>
       </div>
     </div>
-    <div class="flex gap-3">
+    <div class="flex flex-col gap-3">
       <div
         v-if="state.itemLevel(props.itemKey as ItemKey) > 0"
         class="w-full bg-yellow-200 bg-hero-rain-yellow-400 p-2 rounded-xl border-white border-2 shadow-[0_0_0_2px_#a89b49] rounded-sm drop-shadow-[0_4px_0_#cbbf6e]  active:translate-y-1 active:!drop-shadow-none select-none"
         aria-label="Start farming" @click="start"
       >
-        <div v-if="!isPerSec" class="font-medium text-lg h-8 bg-green-300 rounded-lg overflow-hidden relative">
+        <div v-if="!isPerSec" class="relative h-8 overflow-hidden text-lg font-medium bg-green-300 rounded-lg">
           <div class="h-full bg-yellow-50" :style="{ transform: `translateX(${percentage * 100}%)` }" />
-          <span class="absolute top-1 left-1/2 -translate-x-1/2">${{ numberToString(gain) }}</span>
+          <span class="absolute -translate-x-1/2 top-1 left-1/2">${{ numberToString(gain) }}</span>
         </div>
-        <div v-else class="h-5 bg-green-400 progress-bar-striped rounded-lg overflow-hidden relative">
-          <span class="absolute top-0 left-1/2 -translate-x-1/2">${{ numberToString(gain) }} /sec</span>
+        <div v-else class="relative h-5 overflow-hidden bg-green-400 rounded-lg progress-bar-striped">
+          <span class="absolute top-0 -translate-x-1/2 left-1/2">${{ numberToString(gain) }} /sec</span>
         </div>
       </div>
-      <div
-        class="inline-block grow bg-amber-300 border-white border-2 py-0 shadow-[0_0_0_2px_#000] rounded-sm text-xl font-headings rounded-xl shadow-[0_4px_0_#cbbf6e] active:translate-y-1 active:!shadow-none select-none min-w-[150px] text-center"
-        :class="{ grayscale: purchaseBlocked }"
+      <button
+        class="grow bg-amber-300 border-white border-2 py-0 shadow-[0_0_0_2px_#000] rounded-sm text-base font-headings rounded-xl shadow-[0_4px_0_#cbbf6e] active:translate-y-1 active:!shadow-none select-none min-w-[150px] text-center flex justify-around py-2 [&:disabled]:grayscale [&:disabled]:opacity-50 transition-filter font-sans"
+        :disabled="purchaseBlocked"
         aria-label="Start farming"
         @click="state.purchaseItemLevel(props.itemKey as ItemKey)"
       >
-        <div class="p-3">
-          Compra &times;{{ purchaseQuantity }} <br> ${{ numberToString(purchaseCost) }}
+        <div>
+          Compra &times;{{ purchaseQuantity }}
         </div>
-      </div>
+        <div>
+          ${{ numberToString(purchaseCost) }}
+        </div>
+      </button>
     </div>
   </div>
 </template>
