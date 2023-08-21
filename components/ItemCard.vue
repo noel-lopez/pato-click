@@ -76,10 +76,10 @@ function start() {
       >
         <div v-if="!isPerSec" class="relative h-8 overflow-hidden text-lg font-medium bg-green-300 rounded-lg">
           <div class="h-full bg-yellow-50" :style="{ transform: `translateX(${percentage * 100}%)` }" />
-          <span class="absolute -translate-x-1/2 top-1 left-1/2">${{ numberToString(gain) }}</span>
+          <span class="absolute -translate-x-1/2 top-1 left-1/2"><pato-coin />{{ numberToString(gain) }}</span>
         </div>
         <div v-else class="relative h-5 overflow-hidden bg-green-400 rounded-lg progress-bar-striped">
-          <span class="absolute top-0 -translate-x-1/2 left-1/2">${{ numberToString(gain) }} /sec</span>
+          <span class="absolute top-0 -translate-x-1/2 left-1/2"><pato-coin />{{ numberToString(gain) }} /sec</span>
         </div>
       </div>
       <button
@@ -92,7 +92,7 @@ function start() {
           Compra &times;{{ purchaseQuantity }}
         </div>
         <div>
-          ${{ numberToString(purchaseCost) }}
+          <pato-coin />{{ numberToString(purchaseCost) }}
         </div>
       </button>
     </div>

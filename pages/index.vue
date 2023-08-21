@@ -10,7 +10,7 @@ const state = useStore()
   <div>
     <div class="flex justify-between my-8">
       <h1 class="text-5xl font-bold font-headings text-yellow-950">
-        ${{ state.cash }}
+        <pato-coin />{{ state.cash }}
       </h1>
       <div class="flex">
         <button class="block bg-amber-300 border-white border-2 py-0 shadow-[0_0_0_2px_#000] rounded-l-xl text-xl font-headings shadow-[0_4px_0_#cbbf6e] active:translate-y-1 active:!shadow-none select-none px-3 text-center transition-filter" :class="{ grayscale: state.buyMode !== 1 }" @click="state.buyMode = 1">
