@@ -12,25 +12,25 @@ const { numberToString } = useFormat()
 
 <template>
   <div class="-skew-0 flex m-1 bg-betterblue-50 transition-colors hover:bg-white items-center relative isolate border-white border-2 py-1 shadow-[0_0_0_2px_#000] rounded-sm">
-    <div class="-z-1 bg-mask-hero-random-shapes bg-gradient-to-r from-betterblue-200 via-transparent to-transparent absolute h-full w-full" />
-    <nuxt-img class="z-1 absolute translate-y--5 mr-9" :src="`/managers/${props.img}`" :alt="name" width="150" />
-    <div class="flex flex-1 flex-col ml-40">
-      <h2 class="font-bold italic text-3xl text-betterblue-700">
+    <div class="absolute w-full h-full -z-1 bg-mask-hero-random-shapes bg-gradient-to-r from-betterblue-200 via-transparent to-transparent" />
+    <nuxt-img class="absolute z-1 translate-y--5 mr-9" :src="`/managers/${props.img}`" :alt="name" width="150" />
+    <div class="flex flex-col flex-1 ml-40">
+      <h2 class="text-3xl italic font-bold text-betterblue-700">
         {{ name }}
       </h2>
-      <p class="text-betterblue-500 text-xl">
-        $ {{ numberToString(props.cost) }}
+      <p class="text-xl text-betterblue-500">
+        <pato-coin /> {{ numberToString(props.cost) }}
       </p>
       <h3 class="text-lg">
         {{ description }}
       </h3>
     </div>
     <button
-      class="px-3 py-4 rotate-5 translate-y--8 hover:scale-110 transition-transform text-2xl translate-x-4 border-4  bg-betterblue-400 text-white relative font-bold border-betterblue-600" :class="{ grayscale: isBlocked }"
+      class="relative px-3 py-4 text-2xl font-bold text-white transition-transform translate-x-4 border-4 rotate-5 translate-y--8 hover:scale-110 bg-betterblue-400 border-betterblue-600" :class="{ grayscale: isBlocked }"
       @click="store.purchaseManager(props.id)"
     >
       Contratar!
-      <div class="-z-1 bg-mask-hero-endless-clouds bg-betterblue-300 top-0 left-0 absolute h-full w-full" />
+      <div class="absolute top-0 left-0 w-full h-full -z-1 bg-mask-hero-endless-clouds bg-betterblue-300" />
     </button>
   </div>
 </template>
