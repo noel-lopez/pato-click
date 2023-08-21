@@ -16,8 +16,14 @@ const purchaseQuantity = computed(() => state.itemLevelQuantityToBuy(props.itemK
 const purchaseCost = computed(() => state.nextItemLevelCost(props.itemKey as ItemKey))
 const purchaseBlocked = computed(() => !state.isPurchaseable(purchaseCost.value))
 
+// Auto start when purchase manager
 watch(isAutomatic, (isAuto) => {
-  if (isAuto === true && percentage.value === 0)
+  if (isAuto === true && itemLevel.value > 0 && percentage.value === 0)
+    start()
+})
+// Auto start when purchase level 1 after purchasing manager
+watch(itemLevel, (level) => {
+  if (level === 1 && isAutomatic.value === true && percentage.value === 0)
     start()
 })
 
