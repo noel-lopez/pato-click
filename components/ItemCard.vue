@@ -21,10 +21,10 @@ const purchaseBlocked = computed(() => !state.isPurchaseable(purchaseCost.value)
 watch(isAutomatic, (isAuto) => {
   if (isAuto === true && itemLevel.value > 0 && percentage.value === 0)
     start()
-})
-// Auto start when purchase level 1 after purchasing manager
+}, { immediate: true })
+// Auto start when first buy item after purchase manager
 watch(itemLevel, (level) => {
-  if (level === 1 && isAutomatic.value === true && percentage.value === 0)
+  if (level === state.buyMode && isAutomatic.value === true && percentage.value === 0)
     start()
 })
 
