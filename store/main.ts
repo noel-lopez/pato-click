@@ -6,7 +6,10 @@ export const useStore = defineStore('main', () => {
   // DATA TYPES
   type UpgradeId = keyof typeof staticData.upgrades
   type SkinId = keyof typeof staticData.skins
-  type AchievementId = keyof typeof staticData.achievements[AchievementType]
+  type AchievementId = {
+    [T in keyof typeof staticData.achievements]: keyof typeof staticData.achievements[T];
+  }[keyof typeof staticData.achievements]
+
   type ItemLevelsRef = {
     [itemId in ItemKey]: number
   }
@@ -61,6 +64,8 @@ export const useStore = defineStore('main', () => {
   const { currencyToString } = useFormat()
   // BASIC GETTERS
   const cash = computed(() => currencyToString(userCash.value))
+  const earnedAchievementsCount = computed(() => earnedAchievements.value.length)
+  const itemLevelsCount = computed(() => Object.values(itemLevels.value).reduce((a, b) => a + b, 0))
   const isPurchaseable = (cost: number) => userCash.value >= cost
   const itemLevel = (itemId: ItemKey) => itemLevels.value[itemId]
   const managerIsPurchased = (managerId: ItemKey) => purchasedManagers.value.includes(managerId)
@@ -105,6 +110,22 @@ export const useStore = defineStore('main', () => {
         id: skinId as SkinId,
         isEarned: skinIsEarned(skinId as SkinId),
         ...skin,
+      }
+    })
+  })
+
+  const achievementsList = computed(() => {
+    return Object.entries(staticData.achievements).map(([type, achievements]) => {
+      return {
+        type: type as AchievementType,
+        achievements: Object.entries(achievements).map(([achievementId, achievement]) => {
+          return {
+            id: achievementId as AchievementId,
+            type: type as AchievementType,
+            isEarned: achievementIsEarned(achievementId as AchievementId),
+            ...achievement,
+          }
+        }),
       }
     })
   })
@@ -209,6 +230,8 @@ export const useStore = defineStore('main', () => {
     buyMode,
     cash,
     earnedCash,
+    earnedAchievementsCount,
+    itemLevelsCount,
     moneySpent,
     isPurchaseable,
     userSkin,
@@ -220,6 +243,7 @@ export const useStore = defineStore('main', () => {
     unpurchasedManagersList,
     unpurchasedUpgradesList,
     skinsList,
+    achievementsList,
     itemIsAutomatic,
     itemRevenue,
     itemRevenuePerSecond,

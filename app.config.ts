@@ -233,224 +233,272 @@ export default defineAppConfig({
     },
   },
   achievements: {
-    cash: {
-      100: {
-        name: 'Aspirante a patodólars',
-        description: 'Consigue tus primeras 100 patomonedas',
+    rare: {
+      allAchievements: {
+        name: '100%',
+        description: 'Conseguido por conseguir todos los logros',
+        img: '/brand/logo.png',
       },
-      50_000: {
-        name: 'Mentor de patitos',
-        description: 'Consigue 50.000 patomonedas',
-      },
-      100_000: {
-        name: 'Lord Patoso',
-        description: 'Consigue 100.000 patomonedas',
-      },
-      1_000_000: {
-        name: 'Millonario de plumitas',
-        description: 'Consigue 1.000.000 patomonedas',
-      },
-      500_000_000: {
-        name: 'Campeón del chapoteo',
-        description: 'Consigue 500 millones de patomonedas',
-      },
-      1_000_000_000: {
-        name: 'Emperador de la pluma',
-        description: 'Consigue 1.000 millones de patomonedas',
-      },
-      1_000_000_000_000: {
-        name: 'Quacker mágico',
-        description: 'Consigue 1 billón de patomonedas',
-      },
-      10_000_000_000_000: {
-        name: 'Rey de la charca',
-        description: 'Consigue 10 billones de patomonedas',
-      },
-      1_000_000_000_000_000: {
-        name: 'Maestro del Cuack',
-        description: 'Consigue 1 trillón de patomonedas',
-      },
-    },
-    itemLevel: {
-      food_25: {
-        name: 'Festín patoso',
-        description: 'Nivel 25 de Panecillos!',
-      },
-      food_50: {
-        name: 'Banquete acuático',
-        description: 'Nivel 50 de Panecillos!',
-      },
-      food_100: {
-        name: 'Maestro Chef de Patos',
-        description: 'Nivel 100 de Panecillos!',
-      },
-      food_200: {
-        name: 'Pato Gourmet',
-        description: 'Nivel 200 de Panecillos!',
-      },
-      lily_25: {
-        name: 'Salto inicial',
-        description: 'Nivel 25 de Nenúfar!',
-      },
-      lily_50: {
-        name: 'Paseo Flotante',
-        description: 'Nivel 50 de Nenúfar!',
-      },
-      lily_100: {
-        name: 'Jardín de Patos',
-        description: 'Nivel 100 de Nenúfar!',
-      },
-      lily_200: {
-        name: 'Maestro de los estanques',
-        description: 'Nivel 200 de Nenúfar!',
-      },
-      divingKit_25: {
-        name: 'Buceo Inicial',
-        description: 'Nivel 25 de Equipo de buceo!',
-      },
-      divingKit_50: {
-        name: 'Submarinista Patoso',
-        description: 'Nivel 50 de Equipo de buceo!',
-      },
-      divingKit_100: {
-        name: 'Ducktonauta acuático',
-        description: 'Nivel 100 de Equipo de buceo!',
-      },
-      divingKit_200: {
-        name: 'Explorador subacuático',
-        description: 'Nivel 200 de Equipo de buceo!',
-      },
-      lotus_25: {
-        name: 'Loto Naciente',
-        description: 'Nivel 25 de Flor de loto!',
-      },
-      lotus_50: {
-        name: 'Jardín floral',
-        description: 'Nivel 50 de Flor de loto!',
-      },
-      lotus_100: {
-        name: 'Cultivador de paz',
-        description: 'Nivel 100 de Flor de loto!',
-      },
-      lotus_200: {
-        name: 'Emperador del estanque',
-        description: 'Nivel 200 de Flor de loto!',
-      },
-      frog_25: {
-        name: 'Pato saltarín',
-        description: 'Ranita nivel 25!',
-      },
-      frog_50: {
-        name: 'Amigo anfibio',
-        description: 'Ranita nivel 50!',
-      },
-      frog_100: {
-        name: 'Soberano de los sapos',
-        description: 'Ranita nivel 100!',
-      },
-      frog_200: {
-        name: 'Reino de los saltos',
-        description: 'Ranita nivel 200!',
-      },
-      koi_25: {
-        name: 'Estanque oriental',
-        description: 'Nivel 25 de Peces koi!',
-      },
-      koi_50: {
-        name: 'Acuario viviente',
-        description: 'Nivel 50 de Peces koi!',
-      },
-      koi_100: {
-        name: 'Zen acuático',
-        description: 'Nivel 100 de Peces koi!',
-      },
-      koi_200: {
-        name: 'Dragón dorado',
-        description: 'Nivel 200 de Peces koi!',
-      },
-      fountain_25: {
-        name: 'Gotas de diversión',
-        description: 'Nivel 25 de Fuente Aleteo!',
-      },
-      fountain_50: {
-        name: 'Parque acuático',
-        description: 'Nivel 50 de Fuente Aleteo!',
-      },
-      fountain_100: {
-        name: 'Cascada de patos',
-        description: 'Nivel 100 de Fuente Aleteo!',
-      },
-      fountain_200: {
-        name: 'Maestro de las aguas',
-        description: 'Nivel 200 de Fuente Aleteo!',
-      },
-      lantern_25: {
-        name: 'Iluminador nocturno',
-        description: 'Nivel 25 de Farolillos!',
-      },
-      lantern_50: {
-        name: 'Sendero Luminoso',
-        description: 'Nivel 50 de Farolillos!',
-      },
-      lantern_100: {
-        name: 'Festival de luces',
-        description: 'Nivel 100 de Farolillos!',
-      },
-      lantern_200: {
-        name: 'Maestro de la luz',
-        description: 'Nivel 200 de Farolillos!',
-      },
-      thermalBath_25: {
-        name: 'Relax acuático',
-        description: 'Nivel 25 de Baño termal!',
-      },
-      thermalBath_50: {
-        name: 'Spa de plumitas',
-        description: 'Nivel 50 de Baño termal!',
-      },
-      thermalBath_100: {
-        name: 'Ducktástico Descanso',
-        description: 'Nivel 100 de Baño termal!',
-      },
-      thermalBath_200: {
-        name: 'Maestro del baño',
-        description: 'Nivel 200 de Baño termal!',
-      },
-      house_25: {
-        name: 'Pato de alquiler',
-        description: 'Nivel 25 de Casita patuna!',
-      },
-      house_50: {
-        name: 'Hogar acolchado',
-        description: 'Nivel 50 de Casita patuna!',
-      },
-      house_100: {
-        name: 'Nido de Comodidad',
-        description: 'Nivel 100 de Casita patuna!',
-      },
-      house_200: {
-        name: 'Palacio de plumas',
-        description: 'Nivel 200 de Casita patuna!',
+      kuroJam: {
+        name: 'KuroJam',
+        description: 'Conseguido por jugar durante la KuroJam',
+        img: '/skins/skin_kuro.png',
       },
     },
     easteregg: {
       konami: {
         name: 'El KonamiPato',
         description: 'Conseguido por introducir el código Konami',
+        img: '/achievements/konami.png',
       },
     },
-    rare: {
-      top1: {
-        name: 'Top #1 Mundial!',
-        description: 'Conseguido por ser el top #1 mundial',
+    cash: {
+      100: {
+        name: 'Aspirante a patodólars',
+        description: 'Consigue tus primeras 100 patomonedas',
+        img: '/brand/coin.png',
       },
-      allAchievements: {
-        name: 'Todos los logros!',
-        description: 'Conseguido por conseguir todos los logros',
+      50_000: {
+        name: 'Mentor de patitos',
+        description: 'Consigue 50.000 patomonedas',
+        img: '/brand/coin.png',
       },
-      kuroJam: {
-        name: 'KuroJam',
-        description: 'Conseguido por jugar durante la KuroJam',
+      100_000: {
+        name: 'Lord Patoso',
+        description: 'Consigue 100.000 patomonedas',
+        img: '/brand/coin.png',
+      },
+      1_000_000: {
+        name: 'Millonario de plumitas',
+        description: 'Consigue 1.000.000 patomonedas',
+        img: '/brand/coin.png',
+      },
+      500_000_000: {
+        name: 'Campeón del chapoteo',
+        description: 'Consigue 500 millones de patomonedas',
+        img: '/brand/coin.png',
+      },
+      1_000_000_000: {
+        name: 'Emperador de la pluma',
+        description: 'Consigue 1.000 millones de patomonedas',
+        img: '/brand/coin.png',
+      },
+      1_000_000_000_000: {
+        name: 'Quacker mágico',
+        description: 'Consigue 1 billón de patomonedas',
+        img: '/brand/coin.png',
+      },
+      10_000_000_000_000: {
+        name: 'Rey de la charca',
+        description: 'Consigue 10 billones de patomonedas',
+        img: '/brand/coin.png',
+      },
+      1_000_000_000_000_000: {
+        name: 'Maestro del Cuack',
+        description: 'Consigue 1 trillón de patomonedas',
+        img: '/brand/coin.png',
+      },
+    },
+    itemLevel: {
+      food_25: {
+        name: 'Festín patoso',
+        description: 'Nivel 25 de Panecillos!',
+        img: '/items/item_food.png',
+      },
+      food_50: {
+        name: 'Banquete acuático',
+        description: 'Nivel 50 de Panecillos!',
+        img: '/items/item_food.png',
+      },
+      food_100: {
+        name: 'Maestro Chef de Patos',
+        description: 'Nivel 100 de Panecillos!',
+        img: '/items/item_food.png',
+      },
+      food_200: {
+        name: 'Pato Gourmet',
+        description: 'Nivel 200 de Panecillos!',
+        img: '/items/item_food.png',
+      },
+      lily_25: {
+        name: 'Salto inicial',
+        description: 'Nivel 25 de Nenúfar!',
+        img: '/items/item_lily.png',
+      },
+      lily_50: {
+        name: 'Paseo Flotante',
+        description: 'Nivel 50 de Nenúfar!',
+        img: '/items/item_lily.png',
+      },
+      lily_100: {
+        name: 'Jardín de Patos',
+        description: 'Nivel 100 de Nenúfar!',
+        img: '/items/item_lily.png',
+      },
+      lily_200: {
+        name: 'Maestro de los estanques',
+        description: 'Nivel 200 de Nenúfar!',
+        img: '/items/item_lily.png',
+      },
+      divingKit_25: {
+        name: 'Buceo Inicial',
+        description: 'Nivel 25 de Equipo de buceo!',
+        img: '/items/item_diving_kit.png',
+      },
+      divingKit_50: {
+        name: 'Submarinista Patoso',
+        description: 'Nivel 50 de Equipo de buceo!',
+        img: '/items/item_diving_kit.png',
+      },
+      divingKit_100: {
+        name: 'Ducktonauta acuático',
+        description: 'Nivel 100 de Equipo de buceo!',
+        img: '/items/item_diving_kit.png',
+      },
+      divingKit_200: {
+        name: 'Explorador subacuático',
+        description: 'Nivel 200 de Equipo de buceo!',
+        img: '/items/item_diving_kit.png',
+      },
+      lotus_25: {
+        name: 'Loto Naciente',
+        description: 'Nivel 25 de Flor de loto!',
+        img: '/items/item_lotus.png',
+      },
+      lotus_50: {
+        name: 'Jardín floral',
+        description: 'Nivel 50 de Flor de loto!',
+        img: '/items/item_lotus.png',
+      },
+      lotus_100: {
+        name: 'Cultivador de paz',
+        description: 'Nivel 100 de Flor de loto!',
+        img: '/items/item_lotus.png',
+      },
+      lotus_200: {
+        name: 'Emperador del estanque',
+        description: 'Nivel 200 de Flor de loto!',
+        img: '/items/item_lotus.png',
+      },
+      frog_25: {
+        name: 'Pato saltarín',
+        description: 'Ranita nivel 25!',
+        img: '/items/item_frog.png',
+      },
+      frog_50: {
+        name: 'Amigo anfibio',
+        description: 'Ranita nivel 50!',
+        img: '/items/item_frog.png',
+      },
+      frog_100: {
+        name: 'Soberano de los sapos',
+        description: 'Ranita nivel 100!',
+        img: '/items/item_frog.png',
+      },
+      frog_200: {
+        name: 'Reino de los saltos',
+        description: 'Ranita nivel 200!',
+        img: '/items/item_frog.png',
+      },
+      koi_25: {
+        name: 'Estanque oriental',
+        description: 'Nivel 25 de Peces koi!',
+        img: '/items/item_koi.png',
+      },
+      koi_50: {
+        name: 'Acuario viviente',
+        description: 'Nivel 50 de Peces koi!',
+        img: '/items/item_koi.png',
+      },
+      koi_100: {
+        name: 'Zen acuático',
+        description: 'Nivel 100 de Peces koi!',
+        img: '/items/item_koi.png',
+      },
+      koi_200: {
+        name: 'Dragón dorado',
+        description: 'Nivel 200 de Peces koi!',
+        img: '/items/item_koi.png',
+      },
+      fountain_25: {
+        name: 'Gotas de diversión',
+        description: 'Nivel 25 de Fuente Aleteo!',
+        img: '/items/item_fountain.png',
+      },
+      fountain_50: {
+        name: 'Parque acuático',
+        description: 'Nivel 50 de Fuente Aleteo!',
+        img: '/items/item_fountain.png',
+      },
+      fountain_100: {
+        name: 'Cascada de patos',
+        description: 'Nivel 100 de Fuente Aleteo!',
+        img: '/items/item_fountain.png',
+      },
+      fountain_200: {
+        name: 'Maestro de las aguas',
+        description: 'Nivel 200 de Fuente Aleteo!',
+        img: '/items/item_fountain.png',
+      },
+      lantern_25: {
+        name: 'Iluminador nocturno',
+        description: 'Nivel 25 de Farolillos!',
+        img: '/items/item_lantern.png',
+      },
+      lantern_50: {
+        name: 'Sendero Luminoso',
+        description: 'Nivel 50 de Farolillos!',
+        img: '/items/item_lantern.png',
+      },
+      lantern_100: {
+        name: 'Festival de luces',
+        description: 'Nivel 100 de Farolillos!',
+        img: '/items/item_lantern.png',
+      },
+      lantern_200: {
+        name: 'Maestro de la luz',
+        description: 'Nivel 200 de Farolillos!',
+        img: '/items/item_lantern.png',
+      },
+      thermalBath_25: {
+        name: 'Relax acuático',
+        description: 'Nivel 25 de Baño termal!',
+        img: '/items/item_thermal_bath.png',
+      },
+      thermalBath_50: {
+        name: 'Spa de plumitas',
+        description: 'Nivel 50 de Baño termal!',
+        img: '/items/item_thermal_bath.png',
+      },
+      thermalBath_100: {
+        name: 'Ducktástico Descanso',
+        description: 'Nivel 100 de Baño termal!',
+        img: '/items/item_thermal_bath.png',
+      },
+      thermalBath_200: {
+        name: 'Maestro del baño',
+        description: 'Nivel 200 de Baño termal!',
+        img: '/items/item_thermal_bath.png',
+      },
+      house_25: {
+        name: 'Pato de alquiler',
+        description: 'Nivel 25 de Casita patuna!',
+        img: '/items/item_house.png',
+      },
+      house_50: {
+        name: 'Hogar acolchado',
+        description: 'Nivel 50 de Casita patuna!',
+        img: '/items/item_house.png',
+      },
+      house_100: {
+        name: 'Nido de Comodidad',
+        description: 'Nivel 100 de Casita patuna!',
+        img: '/items/item_house.png',
+      },
+      house_200: {
+        name: 'Palacio de plumas',
+        description: 'Nivel 200 de Casita patuna!',
+        img: '/items/item_house.png',
       },
     },
   },
