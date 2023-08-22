@@ -16,6 +16,8 @@ export const useStore = defineStore('main', () => {
 
   // STATE
   const userCash = ref(4)
+  const moneySpent = ref(0)
+
   const buyMode = ref<1 | 10 | 100 | 0xDEFECA>(1)
   const userSkin = ref<SkinId>('default')
   const itemLevels = ref<ItemLevelsRef>({
@@ -159,7 +161,12 @@ export const useStore = defineStore('main', () => {
 
   const spendCash = (amount: number) => {
     userCash.value -= amount
+    moneySpent.value += amount
   }
+
+  const earnedCash = computed(() => {
+    return moneySpent.value + userCash.value
+  })
 
   const purchaseItemLevel = (itemName: ItemKey) => {
     const cost = nextItemLevelCost(itemName)
@@ -207,6 +214,8 @@ export const useStore = defineStore('main', () => {
   return {
     buyMode,
     cash,
+    earnedCash,
+    moneySpent,
     isPurchaseable,
     userSkin,
     itemLevel,
