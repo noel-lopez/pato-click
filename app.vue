@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import type { AchievementNotification } from 'components/AchievementToast.vue'
+import type { NotivueItem } from 'notivue'
+import { Notivue } from 'notivue'
+
 const nuxtApp = useNuxtApp()
 const loading = ref(false)
 nuxtApp.hook('page:start', () => {
@@ -8,6 +12,7 @@ nuxtApp.hook('page:start', () => {
 nuxtApp.hook('page:finish', () => {
   loading.value = false
 })
+useAchievements()
 </script>
 
 <template>
@@ -23,6 +28,11 @@ nuxtApp.hook('page:finish', () => {
         <NuxtPage class="" keepalive />
       </div>
     </NuxtLayout>
+    <ClientOnly>
+      <Notivue v-slot="item">
+        <AchievementToast :item="item as NotivueItem<AchievementNotification>" />
+      </Notivue>
+    </ClientOnly>
   </div>
 </template>
 

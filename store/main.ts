@@ -1,5 +1,5 @@
 // import { persistedState } from 'pinia-plugin-persistedstate'
-import type { AchievementType, ItemKey } from 'index'
+import type { AchievementType, AchievementsConfig, ItemKey } from 'index'
 import { defineStore } from 'pinia'
 
 export const useStore = defineStore('main', () => {
@@ -75,11 +75,11 @@ export const useStore = defineStore('main', () => {
   const itemConfig = (itemId: ItemKey) => staticData.items[itemId]
   const managerConfig = (managerId: ItemKey) => staticData.managers[managerId]
   const upgradeConfig = (upgradeId: UpgradeId) => staticData.upgrades[upgradeId]
-  /* const achievementConfig = <T extends AchievementType, K extends keyof typeof staticData.achievements[T]>(
+  const achievementConfig = <T extends AchievementType, K extends keyof typeof staticData.achievements[T]>(
     type: T,
     id: K,
-  ) => staticData.achievements[type][id]
-  const skinConfig = (skinId: SkinId) => staticData.skins[skinId] */
+  ): AchievementsConfig => staticData.achievements[type][id]
+  // const skinConfig = (skinId: SkinId) => staticData.skins[skinId]
 
   // LIST GETTERS
   const unpurchasedManagersList = computed(() => {
@@ -228,6 +228,7 @@ export const useStore = defineStore('main', () => {
   // RETURN
   return {
     buyMode,
+    cashNumber: userCash,
     cash,
     earnedCash,
     earnedAchievementsCount,
@@ -236,6 +237,7 @@ export const useStore = defineStore('main', () => {
     isPurchaseable,
     userSkin,
     itemLevel,
+    achievementInfo: achievementConfig,
     managerIsPurchased,
     upgradeIsPurchased,
     achievementIsEarned,
