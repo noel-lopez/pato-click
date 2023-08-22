@@ -67,7 +67,7 @@ function start() {
             <PopoverButton class="pl-3 py-1 pr-1 text-lg font-semibold text-yellow-900 bg-yellow-200 border border-yellow-300 rounded-full" :class="{ 'pr-3': itemLevel === 0 }">
               lvl
               {{ itemLevel }}
-              <UnoIcon v-if="itemLevel > 0" class="i-ic-outline-keyboard-arrow-down" :class="{ 'text-yellow-950 rotate-180': open }" />
+              <UnoIcon v-if="itemLevel > 0" class="i-ic-outline-keyboard-arrow-down transition-transform" :class="{ '-scale-y-100': open }" />
             </PopoverButton>
             <TransitionRoot
               as="template"
