@@ -55,7 +55,6 @@ export const useStore = defineStore('main', () => {
     nextItemLevelCost: calcNextItemLevelCost,
     multipleItemLevelCost: calcMultipleItemLevelCost,
     maxBuyableLevels: calcMaxBuyableLevels,
-    getLevelBreakpointsList,
   } = useMoneyMaths()
   const { currencyToString } = useFormat()
   // BASIC GETTERS
@@ -107,11 +106,6 @@ export const useStore = defineStore('main', () => {
       }
     })
   })
-
-  const itemLevelBreakpointsList = (itemName: ItemKey) => {
-    const level = itemLevel(itemName)
-    return getLevelBreakpointsList(level)
-  }
 
   // COMPLEX GETTERS
   const itemIsAutomatic = (itemName: ItemKey) => {
@@ -217,7 +211,6 @@ export const useStore = defineStore('main', () => {
     unpurchasedManagersList,
     unpurchasedUpgradesList,
     skinsList,
-    itemLevelBreakpointsList,
     itemIsAutomatic,
     itemRevenue,
     itemRevenuePerSecond,
