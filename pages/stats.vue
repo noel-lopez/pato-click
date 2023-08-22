@@ -13,9 +13,10 @@ const state = useStore()
       <h2 class="font-headings font-bold text-3xl text-emerald-9/90">
         Consulta tus estadísticas
       </h2>
-      <p class="text-xl">
-
-      </p>
+      <div class="flex gap-4 my-4">
+        <Stat title="Dinero ganado" :content="state.earnedCash" />
+        <Stat title="Dinero gastado" :content="state.moneySpent" />
+      </div>
     </header>
   </div>
 </template>
