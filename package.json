@@ -27,6 +27,7 @@
     "pinia": "^2.1.6"
   },
   "dependencies": {
-    "@headlessui/vue": "^1.7.16"
+    "@headlessui/vue": "^1.7.16",
+    "notivue": "^1.2.4"
   }
 }

@@ -253,47 +253,47 @@ export default defineAppConfig({
       },
     },
     cash: {
-      100: {
+      '100': {
         name: 'Aspirante a patodólars',
         description: 'Consigue tus primeras 100 patomonedas',
         img: '/brand/coin.png',
       },
-      50_000: {
+      '50k': {
         name: 'Mentor de patitos',
         description: 'Consigue 50.000 patomonedas',
         img: '/brand/coin.png',
       },
-      100_000: {
+      '100k': {
         name: 'Lord Patoso',
         description: 'Consigue 100.000 patomonedas',
         img: '/brand/coin.png',
       },
-      1_000_000: {
+      '1M': {
         name: 'Millonario de plumitas',
         description: 'Consigue 1.000.000 patomonedas',
         img: '/brand/coin.png',
       },
-      500_000_000: {
+      '500M': {
         name: 'Campeón del chapoteo',
         description: 'Consigue 500 millones de patomonedas',
         img: '/brand/coin.png',
       },
-      1_000_000_000: {
+      '1KM': {
         name: 'Emperador de la pluma',
         description: 'Consigue 1.000 millones de patomonedas',
         img: '/brand/coin.png',
       },
-      1_000_000_000_000: {
+      '1B': {
         name: 'Quacker mágico',
         description: 'Consigue 1 billón de patomonedas',
         img: '/brand/coin.png',
       },
-      10_000_000_000_000: {
+      '10B': {
         name: 'Rey de la charca',
         description: 'Consigue 10 billones de patomonedas',
         img: '/brand/coin.png',
       },
-      1_000_000_000_000_000: {
+      '1T': {
         name: 'Maestro del Cuack',
         description: 'Consigue 1 trillón de patomonedas',
         img: '/brand/coin.png',

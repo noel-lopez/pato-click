@@ -17,7 +17,7 @@ function getAchievementCategoryTitle(type: AchievementType) {
     case 'easteregg':
       return 'Easter eggs'
     case 'rare':
-      return 'Logros raros'
+      return 'Logros legendarios'
   }
 }
 </script>

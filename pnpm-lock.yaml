@@ -8,6 +8,9 @@ dependencies:
   '@headlessui/vue':
     specifier: ^1.7.16
     version: 1.7.16(vue@3.3.4)
+  notivue:
+    specifier: ^1.2.4
+    version: 1.2.4
 
 devDependencies:
   '@antfu/eslint-config':
@@ -6557,6 +6560,10 @@ packages:
     resolution: {integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /notivue@1.2.4:
+    resolution: {integrity: sha512-IYPK26W9LAV3rkYZHh/gHu0dctQPOEft2T8i7GwhT3dIZZcP0ckWixUfdeX9BEn29u2QAVr/FjPosaeK3L1CJA==}
+    dev: false
 
   /npm-bundled@3.0.0:
     resolution: {integrity: sha512-Vq0eyEQy+elFpzsKjMss9kxqb9tG3YHg4dsyWuUENuzvSUWe1TCnW/vV9FkhvBk/brEDoDiVd+M1Btosa6ImdQ==}
