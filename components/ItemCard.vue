@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import { Popover, PopoverButton, PopoverPanel, TransitionRoot } from '@headlessui/vue'
 import type { ItemConfig, ItemKey } from '../index.d.ts'
 import { useStore } from '~/store/main'
 
-const props = defineProps<ItemConfig & { itemKey: string }>()
+const props = defineProps<ItemConfig & { itemKey: ItemKey }>()
 const state = useStore()
 
 const itemLevel = computed(() => state.itemLevel(props.itemKey as ItemKey))
@@ -62,12 +63,25 @@ function start() {
           <h2 class="text-2xl font-bold text-yellow-950">
             {{ name }}
           </h2>
-          <span
-            class="px-3 py-1 text-lg font-semibold text-yellow-900 bg-yellow-200 border border-yellow-300 rounded-full"
-          >
-            lvl
-            {{ itemLevel }}
-          </span>
+          <Popover class="relative">
+            <PopoverButton class="px-3 py-1 text-lg font-semibold text-yellow-900 bg-yellow-200 border border-yellow-300 rounded-full">
+              lvl
+              {{ itemLevel }}
+            </PopoverButton>
+            <TransitionRoot
+              as="template"
+              enter="transition ease-out duration-200"
+              enter-from="opacity-0 -translate-y-1"
+              enter-to="opacity-100 translate-y-0"
+              leave="transition ease-in duration-150"
+              leave-from="opacity-100 translate-y-0"
+              leave-to="opacity-0 -translate-y-1"
+            >
+              <PopoverPanel class="absolute z-10 bg-yellow-50 p-3 rounded-lg shadow-lg border-2 border-yellow-300 min-w-50">
+                <ItemBreakpoints :item-key="props.itemKey" />
+              </PopoverPanel>
+            </TransitionRoot>
+          </Popover>
         </div>
         <p class="text-lg">
           {{ description }}
