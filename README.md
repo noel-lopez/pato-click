@@ -77,3 +77,4 @@ yarn dev
 
 Este proyecto está bajo la Licencia [MIT](https://opensource.org/licenses/MIT).
 
+![XD](https://github.com/noel-lopez/pato-click/assets/82571330/ad926901-9e28-41c0-a52a-c5a865876fcc)
