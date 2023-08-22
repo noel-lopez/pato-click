@@ -63,10 +63,11 @@ function start() {
           <h2 class="text-2xl font-bold text-yellow-950">
             {{ name }}
           </h2>
-          <Popover class="relative">
-            <PopoverButton class="px-3 py-1 text-lg font-semibold text-yellow-900 bg-yellow-200 border border-yellow-300 rounded-full">
+          <Popover v-slot="{ open, close }" class="relative">
+            <PopoverButton class="pl-3 py-1 pr-1 text-lg font-semibold text-yellow-900 bg-yellow-200 border border-yellow-300 rounded-full" :class="{ 'pr-3': itemLevel === 0 }">
               lvl
               {{ itemLevel }}
+              <UnoIcon v-if="itemLevel > 0" class="i-ic-outline-keyboard-arrow-down" :class="{ 'text-yellow-950 rotate-180': open }" />
             </PopoverButton>
             <TransitionRoot
               as="template"
@@ -78,7 +79,7 @@ function start() {
               leave-to="opacity-0 -translate-y-1"
             >
               <PopoverPanel class="absolute z-10 bg-yellow-50 p-3 rounded-lg shadow-lg border-2 border-yellow-300 min-w-50">
-                <ItemBreakpoints :item-key="props.itemKey" />
+                <ItemBreakpoints :item-key="props.itemKey" :close="close" />
               </PopoverPanel>
             </TransitionRoot>
           </Popover>
