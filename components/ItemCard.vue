@@ -99,8 +99,8 @@ function start() {
           <div class="h-full bg-yellow-50" :style="{ transform: `translateX(${percentage * 100}%)` }" />
           <span class="absolute -translate-x-1/2 top-1 left-1/2"><pato-coin />{{ numberToString(gain) }}</span>
         </div>
-        <div v-else class="relative h-8 overflow-hidden bg-green-400 rounded-lg progress-bar-striped">
-          <span class="absolute top-0 -translate-x-1/2 left-1/2"><pato-coin />{{ numberToString(gain) }} /sec</span>
+        <div v-else class="relative h-8 overflow-hidden bg-green-400 text-lg font-medium rounded-lg progress-bar-striped">
+          <span class="absolute top-1 -translate-x-1/2 left-1/2"><pato-coin />{{ numberToString(gain) }} /sec</span>
         </div>
       </div>
       <button
