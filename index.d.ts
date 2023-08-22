@@ -25,7 +25,7 @@ export interface UpgradeConfig extends Omit<BaseItem, 'img'> {
 
 export type AchievementType = 'cash' | 'itemLevel' | 'easteregg' | 'rare'
 
-export interface AchievementsConfig extends Omit<BaseItem, 'img'> {
+export interface AchievementsConfig extends BaseItem {
 }
 
 export interface SkinsConfig extends BaseItem {
