@@ -31,6 +31,8 @@ export interface AchievementsConfig extends BaseItem {
 export interface SkinsConfig extends BaseItem {
 }
 
+export type BuyMode = 1 | 10 | 100 | 0xDEFECA
+
 declare module "nuxt/schema" {
   interface AppConfigInput {
     items: {
