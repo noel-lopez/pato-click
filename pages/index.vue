@@ -19,13 +19,12 @@ const state = useStore()
         <button class="block bg-amber-300 border-white border-2 py-0 shadow-[0_0_0_2px_#000] text-xl font-headings shadow-[0_4px_0_#cbbf6e] active:translate-y-1 active:!shadow-none select-none px-3 text-center transition-filter" :class="{ grayscale: state.buyMode !== 10 }" @click="state.buyMode = 10">
           &times;10
         </button>
-        <button class="block bg-amber-300 border-white border-2 py-0 shadow-[0_0_0_2px_#000] rounded-r-xl text-xl font-headings shadow-[0_4px_0_#cbbf6e] active:translate-y-1 active:!shadow-none select-none px-3 text-center transition-filter" :class="{ grayscale: state.buyMode !== 100 }" @click="state.buyMode = 100">
+        <button class="block bg-amber-300 border-white border-2 py-0 shadow-[0_0_0_2px_#000] text-xl font-headings shadow-[0_4px_0_#cbbf6e] active:translate-y-1 active:!shadow-none select-none px-3 text-center transition-filter" :class="{ grayscale: state.buyMode !== 100 }" @click="state.buyMode = 100">
           &times;100
         </button>
-        <!-- TODO: fix MAX mode -->
-        <!-- <button @click="state.buyMode = 0xDEFECA">
-          MAX
-        </button> -->
+        <button class="block bg-amber-300 border-white border-2 py-0 shadow-[0_0_0_2px_#000] rounded-r-xl text-xl font-headings shadow-[0_4px_0_#cbbf6e] active:translate-y-1 active:!shadow-none select-none px-3 text-center transition-filter" :class="{ grayscale: state.buyMode !== 0xDEFECA }" @click="state.buyMode = 0xDEFECA">
+          Prox.
+        </button>
       </div>
     </div>
     <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-12">

@@ -59,7 +59,7 @@ export const useStore = defineStore('main', () => {
     itemRevenuePerSecond: calcItemRevenuePerSecond,
     nextItemLevelCost: calcNextItemLevelCost,
     multipleItemLevelCost: calcMultipleItemLevelCost,
-    maxBuyableLevels: calcMaxBuyableLevels,
+    nextItemLevelBreakpoint: calcNextItemLevelBreakpoint,
   } = useMoneyMaths()
   const { currencyToString } = useFormat()
   // BASIC GETTERS
@@ -160,13 +160,14 @@ export const useStore = defineStore('main', () => {
   }
 
   const itemLevelQuantityToBuy = (itemName: ItemKey) => {
-    const item = itemConfig(itemName)
     const level = itemLevel(itemName)
     if (buyMode.value === 1)
       return 1
     if (buyMode.value === 0xDEFECA) {
-      const maxBuyableLevels = calcMaxBuyableLevels(level, item.costBase, item.rateGrowth, userCash.value)
-      return maxBuyableLevels
+      const nextBreakpoint = calcNextItemLevelBreakpoint(level)
+      if (nextBreakpoint === 0) // reached last breakpoint (lvl 10.000)
+        return 0
+      return nextBreakpoint - level
     }
     return buyMode.value
   }
