@@ -117,14 +117,14 @@ export default defineAppConfig({
       cost: 500_000,
     },
     frog: {
-      name: 'Manager de ranas',
+      name: 'Yoshito',
       description: 'Encargado de cuidar a la ranita',
       img: 'manager_frog.png',
       cost: 1_200_000,
     },
     koi: {
-      name: 'Manager de peces koi',
-      description: 'Encargado de cuidar los peces koi',
+      name: 'Sakura',
+      description: 'Encargada de cuidar los peces koi',
       img: 'manager_koi.png',
       cost: 10_000_000,
     },
