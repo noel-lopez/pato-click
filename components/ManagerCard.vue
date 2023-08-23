@@ -2,7 +2,7 @@
 import type { ManagerConfig } from '../index.d.ts'
 import { useStore } from '~/store/main'
 
-const props = defineProps<ManagerConfig & { id: ManagerId }>()
+const props = defineProps<ManagerConfig & { id: ManagerId; isPurchased: boolean }>()
 const staticData = useAppConfig()
 type ManagerId = keyof typeof staticData.managers
 const store = useStore()
@@ -26,7 +26,8 @@ const { numberToString } = useFormat()
       </h3>
     </div>
     <button
-      class="relative px-3 py-4 text-2xl font-bold text-white transition-transform translate-x-4 border-4 rotate-5 translate-y--8 hover:scale-110 bg-betterblue-400 border-betterblue-600" :class="{ grayscale: isBlocked }"
+      v-if="!props.isPurchased" class="relative px-3 py-4 text-2xl font-bold text-white transition-transform translate-x-4 border-4 rotate-5 translate-y--8 hover:scale-110 bg-betterblue-400 border-betterblue-600"
+      :class="{ grayscale: isBlocked }"
       @click="store.purchaseManager(props.id)"
     >
       Contratar!
