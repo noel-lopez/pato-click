@@ -93,6 +93,17 @@ export const useStore = defineStore('main', () => {
     })
   })
 
+  const purchasedManagersList = computed(() => {
+    return Object.entries(staticData.managers).filter(([managerId]) => {
+      return managerIsPurchased(managerId as ItemKey)
+    }).map(([managerId, manager]) => {
+      return {
+        id: managerId as ItemKey,
+        ...manager,
+      }
+    })
+  })
+
   const unpurchasedUpgradesList = computed(() => {
     return Object.entries(staticData.upgrades).filter(([upgradeId]) => {
       return !upgradeIsPurchased(upgradeId as UpgradeId)
@@ -243,6 +254,7 @@ export const useStore = defineStore('main', () => {
     achievementIsEarned,
     skinIsEarned,
     unpurchasedManagersList,
+    purchasedManagersList,
     unpurchasedUpgradesList,
     skinsList,
     achievementsList,
