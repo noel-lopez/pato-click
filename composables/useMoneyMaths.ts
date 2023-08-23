@@ -1,3 +1,5 @@
+import type { BuyMode } from 'index'
+
 interface LevelBreakpoint {
   level: number
   effect: number
@@ -76,6 +78,15 @@ export function useMoneyMaths() {
     return nextBreakpoint
   }
 
+  // check if the last purchase was the first one of the item
+  function isFirstItemPurchase(level: number, buyMode: BuyMode) {
+    if (level === buyMode)
+      return true
+    if (buyMode === 0xDEFECA && level === 25)
+      return true
+    return false
+  }
+
   function totalBreakpointsMultiplier(currentLevel: number) {
     let totalMultiplier = 1
     for (const breakpoint of levelBreakpoints) {
@@ -132,6 +143,7 @@ export function useMoneyMaths() {
 
   return {
     nextItemLevelBreakpoint,
+    isFirstItemPurchase,
     totalBreakpointsMultiplier,
     nextBreakpointsList,
     nextItemLevelCost,

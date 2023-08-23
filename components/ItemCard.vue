@@ -2,9 +2,11 @@
 import { Popover, PopoverButton, PopoverPanel, TransitionRoot } from '@headlessui/vue'
 import type { ItemConfig, ItemKey } from '../index.d.ts'
 import { useStore } from '~/store/main'
+import { useMoneyMaths } from '~/composables/useMoneyMaths'
 
 const props = defineProps<ItemConfig & { itemKey: ItemKey }>()
 const state = useStore()
+const { isFirstItemPurchase } = useMoneyMaths()
 
 const itemLevel = computed(() => state.itemLevel(props.itemKey as ItemKey))
 const isAutomatic = computed(() => state.managerIsPurchased(props.itemKey as ItemKey))
@@ -24,7 +26,7 @@ watch(isAutomatic, (isAuto) => {
 }, { immediate: true })
 // Auto start when first buy item after purchase manager
 watch(itemLevel, (level) => {
-  if (level === state.buyMode && isAutomatic.value === true && percentage.value === 0)
+  if (isAutomatic.value === true && percentage.value === 0 && isFirstItemPurchase(level, state.buyMode))
     start()
 })
 

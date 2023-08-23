@@ -1,5 +1,5 @@
 // import { persistedState } from 'pinia-plugin-persistedstate'
-import type { AchievementType, AchievementsConfig, ItemKey } from 'index'
+import type { AchievementType, AchievementsConfig, BuyMode, ItemKey } from 'index'
 import { defineStore } from 'pinia'
 
 export const useStore = defineStore('main', () => {
@@ -21,7 +21,7 @@ export const useStore = defineStore('main', () => {
   const userCash = ref(4)
   const moneySpent = ref(0)
 
-  const buyMode = ref<1 | 10 | 100 | 0xDEFECA>(1)
+  const buyMode = ref<BuyMode>(1)
   const userSkin = ref<SkinId>('default')
   const itemLevels = ref<ItemLevelsRef>({
     food: 0,
