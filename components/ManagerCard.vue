@@ -11,7 +11,7 @@ const { numberToString } = useFormat()
 </script>
 
 <template>
-  <div class="flex m-1 bg-betterblue-50 dark:bg-betterblue-900 transition-colors hover:bg-betterblue-800 items-center relative isolate border-white dark:border-betterblue-300 border-2 py-1 shadow-[0_0_0_2px_#000] rounded-sm">
+  <div class="flex m-1 bg-betterblue-50 dark:bg-betterblue-900 transition-colors hover:bg-white dark:hover:bg-betterblue-800 items-center relative isolate border-white dark:border-betterblue-300 border-2 py-1 shadow-[0_0_0_2px_#000] rounded-sm">
     <div class="absolute w-full h-full -z-1 bg-mask-hero-random-shapes bg-gradient-to-r from-betterblue-200 dark:from-betterblue-800 via-transparent to-transparent" />
     <nuxt-img class="absolute z-1 translate-y--5 mr-9" :src="`/managers/${props.img}`" :alt="name" width="150" />
     <div class="flex flex-col flex-1 ml-40">

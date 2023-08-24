@@ -10,7 +10,7 @@ const state = useStore()
       <pato-coin />{{ state.cash }}
     </h1>
     <header class="flex flex-col items-center justify-between gap-2 w-2xl">
-      <h2 class="text-3xl font-bold font-headings text-betterblue-300">
+      <h2 class="text-3xl font-bold font-headings text-betterblue-500 dark:text-betterblue-300">
         ¡Los managers te harán la vida más fácil!
       </h2>
       <p class="text-xl">

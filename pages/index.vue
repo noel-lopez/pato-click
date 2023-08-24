@@ -13,7 +13,7 @@ const state = useStore()
         <pato-coin />{{ state.cash }}
       </h1>
       <div class="flex">
-        <button class="block bg-amber-300 dark:bg-neutral-800  border-white dark:border-yellow-200  border-2 py-0 shadow-[0_0_0_2px_#000] rounded-l-xl text-xl font-headings shadow-[0_4px_0_#cbbf6e] active:translate-y-1 active:!shadow-none select-none px-3 text-center transition-filter" :class="{ 'grayscale': state.buyMode !== 1 }" @click="state.buyMode = 1">
+        <button class="block bg-amber-300 dark:bg-neutral-800  border-white dark:border-yellow-200  border-2 py-0 shadow-[0_0_0_2px_#000] rounded-l-xl text-xl font-headings shadow-[0_4px_0_#cbbf6e] active:translate-y-1 active:!shadow-none select-none px-3 text-center transition-filter" :class="{ grayscale: state.buyMode !== 1 }" @click="state.buyMode = 1">
           &times;1
         </button>
         <button class="block bg-amber-300 dark:bg-neutral-800  border-white dark:border-yellow-200  border-2 py-0 shadow-[0_0_0_2px_#000] text-xl font-headings shadow-[0_4px_0_#cbbf6e] active:translate-y-1 active:!shadow-none select-none px-3 text-center transition-filter" :class="{ grayscale: state.buyMode !== 10 }" @click="state.buyMode = 10">
