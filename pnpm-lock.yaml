@@ -1,4 +1,4 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
 
 settings:
   autoInstallPeers: true
@@ -25,6 +25,9 @@ devDependencies:
   '@nuxt/image':
     specifier: 1.0.0-rc.1
     version: 1.0.0-rc.1
+  '@nuxtjs/color-mode':
+    specifier: ^3.3.0
+    version: 3.3.0
   '@nuxtjs/supabase':
     specifier: ^1.0.2
     version: 1.0.2
@@ -1460,6 +1463,17 @@ packages:
       - vls
       - vti
       - vue-tsc
+    dev: true
+
+  /@nuxtjs/color-mode@3.3.0:
+    resolution: {integrity: sha512-YVFNmTISke1eL7uk5p9I1suOsM222FxrqKoF13HS4x94OKCWwPLLeTCEzHZ8orzKnaFUbCXpuL4pRv8gvW+0Kw==}
+    dependencies:
+      '@nuxt/kit': 3.6.5
+      lodash.template: 4.5.0
+      pathe: 1.1.1
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
     dev: true
 
   /@nuxtjs/supabase@1.0.2:

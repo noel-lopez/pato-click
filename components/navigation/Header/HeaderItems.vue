@@ -35,9 +35,9 @@ const items = [
 
 <template>
   <div class="flex-1">
-    <ul class="flex flex-col divide-y">
+    <ul class="flex flex-col divide-y dark:divide-neutral-600">
       <li v-for="link in items" :key="link.href">
-        <nuxt-link :to="link.href" class="py-3 px-8 flex gap-3 items-center text-md font-headings text-2xl">
+        <nuxt-link :to="link.href" class="flex items-center gap-3 px-8 py-3 text-2xl text-md font-headings">
           <UnoIcon v-if="link.icon" :class="link.icon" />
           {{ link.label }}
         </nuxt-link>
@@ -49,6 +49,6 @@ const items = [
 <style>
 .router-link-active {
   background-image: linear-gradient(to top, #f6e05e55 0%, transparent 60%);
-  color: #463e10;
+  color: #efe8bb;
 }
 </style>

@@ -16,30 +16,48 @@ useAchievements()
 </script>
 
 <template>
-  <div
-    class="container grid min-h-screen grid-cols-4 gap-24 p-4 mx-auto font-sans antialiased text-gray-600 dark:text-zinc-400 custom-inter scroll-smooth selection:bg-yellow-300"
-  >
-    <div v-if="loading" class="fixed left-0 top-0 h-0.5 w-full z-50 bg-green-500" />
-    <NavigationHeader />
-    <NuxtLayout>
-      <div class="w-full col-span-3 mx-auto mb-auto">
-        <SeoKit />
-        <OgImageStatic component="PageOgImage" />
-        <NuxtPage class="" keepalive />
-      </div>
-    </NuxtLayout>
-    <ClientOnly>
-      <Notivue v-slot="item">
-        <AchievementToast :item="item as NotivueItem<AchievementNotification>" />
-      </Notivue>
-    </ClientOnly>
+  <div class="min-h-screen font-sans antialiased text-gray-600 dark:bg-neutral-950 dark:text-yellow-100 custom-inter scroll-smooth selection:bg-yellow-300">
+    <div
+      class="container grid grid-cols-4 gap-24 p-4 mx-auto"
+    >
+      <div v-if="loading" class="fixed left-0 top-0 h-0.5 w-full z-50 bg-green-500" />
+      <NavigationHeader />
+      <NuxtLayout>
+        <div class="w-full col-span-3 mx-auto mb-auto">
+          <SeoKit />
+          <OgImageStatic component="PageOgImage" />
+          <NuxtPage class="" keepalive />
+        </div>
+      </NuxtLayout>
+      <ClientOnly>
+        <Notivue v-slot="item">
+          <AchievementToast :item="item as NotivueItem<AchievementNotification>" />
+        </Notivue>
+      </ClientOnly>
+    </div>
   </div>
 </template>
 
 <style>
-html, body {
- background:#fff4e0
+@keyframes hueRotateAnimation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
 }
+:root.kuro {
+        background: url('https://cdn.beacons.ai/user_content/8yNKHUQiH7PICchDY2ZTmabHDtv2/profile_ikurotime.webp?t=1672489346139');
+        background-size:cover;
+        animation: hueRotateAnimation 30s infinite; /* Change the duration as needed */
+
+        font-family: "Comic Sans MS" !important;
+    }
+:root.dark {
+  color-scheme: dark;
+}
+
 .custom-inter {
   font-feature-settings: "calt", "ss02", "ss01", "ss03", "cv02", "cv03", "cv04", "cv11";
 }

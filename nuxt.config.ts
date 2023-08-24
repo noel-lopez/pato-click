@@ -4,8 +4,12 @@ export default defineNuxtConfig({
     '@unocss/nuxt',
     '@vueuse/nuxt',
     '@pinia/nuxt',
+    '@nuxtjs/color-mode',
     '@pinia-plugin-persistedstate/nuxt',
   ],
+  colorMode: {
+    classSuffix: '',
+  },
   css: ['@unocss/reset/tailwind.css', 'notivue/animations.css'],
   supabase: {
     redirect: false,

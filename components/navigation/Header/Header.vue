@@ -1,7 +1,8 @@
 <template>
-  <header class="flex flex-col justify-between w-full rounded-3xl bg-white bg-red overflow-hidden border-2 border-black max-h-90vh sticky">
+  <header class="sticky flex flex-col justify-between w-full overflow-hidden bg-white border-2 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700 max-h-90vh">
     <navigationHeaderLogo />
     <navigationHeaderItems />
+    <ThemeToggler />
     <navigationHeaderPound />
   </header>
 </template>

@@ -62,14 +62,14 @@ function start() {
       <nuxt-img :src="`/items/${img}`" :alt="name" width="96" />
       <div>
         <div class="flex items-center justify-between gap-2">
-          <h2 class="text-2xl font-bold text-yellow-950">
+          <h2 class="text-2xl font-bold text-yellow-950 dark:text-yellow-200">
             {{ name }}
           </h2>
           <Popover v-slot="{ open, close }" class="relative">
-            <PopoverButton class="pl-3 py-1 pr-1 text-lg font-semibold text-yellow-900 bg-yellow-200 border border-yellow-300 rounded-full" :class="{ 'pr-3': itemLevel === 0 }">
+            <PopoverButton class="py-1 pl-3 pr-1 text-lg font-semibold text-yellow-900 bg-yellow-200 border border-yellow-300 rounded-full" :class="{ 'pr-3': itemLevel === 0 }">
               lvl
               {{ itemLevel }}
-              <UnoIcon v-if="itemLevel > 0" class="i-ic-outline-keyboard-arrow-down transition-transform" :class="{ '-scale-y-100': open }" />
+              <UnoIcon v-if="itemLevel > 0" class="transition-transform i-ic-outline-keyboard-arrow-down" :class="{ '-scale-y-100': open }" />
             </PopoverButton>
             <TransitionRoot
               as="template"
@@ -80,7 +80,7 @@ function start() {
               leave-from="opacity-100 translate-y-0"
               leave-to="opacity-0 -translate-y-1"
             >
-              <PopoverPanel class="absolute z-10 bg-yellow-50 p-3 rounded-lg shadow-lg border-2 border-yellow-300 min-w-50">
+              <PopoverPanel class="absolute z-10 p-3 border-2 border-yellow-300 rounded-lg shadow-lg bg-yellow-50 dark:bg-neutral-900 dark:border-yellow-200 min-w-50">
                 <ItemBreakpoints :item-key="props.itemKey" :close="close" />
               </PopoverPanel>
             </TransitionRoot>
@@ -94,19 +94,19 @@ function start() {
     <div class="flex flex-col gap-3">
       <div
         v-if="state.itemLevel(props.itemKey as ItemKey) > 0"
-        class="w-full bg-yellow-200 bg-hero-rain-yellow-400 p-2 rounded-xl border-white border-2 shadow-[0_0_0_2px_#a89b49] rounded-sm drop-shadow-[0_4px_0_#cbbf6e]  active:translate-y-1 active:!drop-shadow-none select-none"
+        class="w-full bg-yellow-200 dark:bg-neutral-900 dark:border-neutral-500 light:bg-hero-rain-yellow-400 p-2 rounded-xl border-white border-2 light:shadow-[0_0_0_2px_#a89b49] rounded-sm light:drop-shadow-[0_4px_0_#cbbf6e]  active:translate-y-1 active:!drop-shadow-none select-none"
         aria-label="Start farming" @click="start"
       >
-        <div v-if="!isPerSec" class="relative h-8 overflow-hidden text-lg font-medium bg-green-300 rounded-lg">
-          <div class="h-full bg-yellow-50" :style="{ transform: `translateX(${percentage * 100}%)` }" />
+        <div v-if="!isPerSec" class="relative h-8 overflow-hidden text-lg font-medium bg-green-600 rounded-lg">
+          <div class="h-full bg-yellow-50 dark:bg-neutral-800" :style="{ transform: `translateX(${percentage * 100}%)` }" />
           <span class="absolute -translate-x-1/2 top-1 left-1/2"><pato-coin />{{ numberToString(gain) }}</span>
         </div>
-        <div v-else class="relative h-8 overflow-hidden bg-green-400 text-lg font-medium rounded-lg progress-bar-striped">
-          <span class="absolute top-1 -translate-x-1/2 left-1/2"><pato-coin />{{ numberToString(gain) }} /sec</span>
+        <div v-else class="relative h-8 overflow-hidden text-lg font-medium bg-green-400 rounded-lg progress-bar-striped">
+          <span class="absolute -translate-x-1/2 top-1 left-1/2"><pato-coin />{{ numberToString(gain) }} /sec</span>
         </div>
       </div>
       <button
-        class="grow bg-amber-300 border-white border-2 py-0 shadow-[0_0_0_2px_#000] rounded-sm text-base font-headings rounded-xl shadow-[0_4px_0_#cbbf6e] active:translate-y-1 active:!shadow-none select-none min-w-[150px] text-center flex justify-around py-2 [&:disabled]:grayscale [&:disabled]:opacity-50 transition-filter font-sans"
+        class="grow bg-amber-300 dark:bg-neutral-800 dark:border-neutral-500 border-white border-2 py-0 shadow-[0_0_0_2px_#000] rounded-sm text-base font-headings rounded-xl shadow-[0_4px_0_#cbbf6e] active:translate-y-1 active:!shadow-none select-none min-w-[150px] text-center flex justify-around py-2 [&:disabled]:grayscale [&:disabled]:opacity-50 transition-filter font-sans"
         :disabled="purchaseBlocked"
         aria-label="Start farming"
         @click="state.purchaseItemLevel(props.itemKey as ItemKey)"

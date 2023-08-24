@@ -6,11 +6,11 @@ const state = useStore()
 
 <template>
   <div>
-    <h1 class="flex items-center my-8 text-5xl font-bold font-headings text-betterblue-950">
+    <h1 class="flex items-center my-8 text-5xl font-bold font-headings text-betterblue-950 dark:text-betterblue-300">
       <pato-coin />{{ state.cash }}
     </h1>
     <header class="flex flex-col items-center justify-between gap-2 w-2xl">
-      <h2 class="text-3xl font-bold font-headings text-betterblue-500">
+      <h2 class="text-3xl font-bold font-headings text-betterblue-300">
         ¡Los managers te harán la vida más fácil!
       </h2>
       <p class="text-xl">
@@ -22,7 +22,7 @@ const state = useStore()
         <ManagerCard v-bind="manager" :is-purchased="false" />
       </li>
     </ul>
-    <h3 v-if="state.purchasedManagersList.length > 0" class="text-2xl font-bold font-headings text-betterblue-800 mb-2">
+    <h3 v-if="state.purchasedManagersList.length > 0" class="mb-2 text-2xl font-bold font-headings text-betterblue-800">
       Managers contratados:
     </h3>
     <ul class="grid grid-cols-1 gap-12 max-w-[700px] py-8">
