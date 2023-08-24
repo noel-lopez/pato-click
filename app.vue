@@ -18,7 +18,7 @@ useAchievements()
 <template>
   <div class="min-h-screen font-sans antialiased text-gray-600 dark:bg-neutral-950 dark:text-yellow-100 custom-inter scroll-smooth selection:bg-yellow-300">
     <div
-      class="container grid grid-cols-4 gap-24 p-4 mx-auto"
+      class="container grid grid-cols-4 gap-8 lg:gap-24 p-4 mx-auto"
     >
       <div v-if="loading" class="fixed left-0 top-0 h-0.5 w-full z-50 bg-green-500" />
       <NavigationHeader />

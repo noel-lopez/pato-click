@@ -28,7 +28,7 @@ function getAchievementCategoryTitle(type: AchievementType) {
       <pato-coin />{{ state.cash }}
     </h1>
     <header class="flex flex-col justify-between gap-2 w-2xl" style="--stagger:2" data-animate>
-      <div class="grid grid-cols-1 gap-4 my-4 md:grid-cols-2">
+      <div class="grid grid-cols-1 gap-4 my-4 lg:grid-cols-2">
         <Stat title="Patomonedas ganadas" :content="formattedEarnedCash" />
         <Stat title="Patomonedas gastadas" :content="formattedMoneySpent" />
         <Stat title="Logros desbloqueados" :content="state.earnedAchievementsCount" />

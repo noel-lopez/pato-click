@@ -61,7 +61,7 @@ function start() {
     <div class="flex items-center gap-4 mb-2" :class="{ 'grayscale opacity-75 pointer-events-none': itemLevel === 0 }">
       <nuxt-img :src="`/items/${img}`" :alt="name" width="96" />
       <div>
-        <div class="flex items-center justify-between gap-2">
+        <div class="flex flex-col-reverse lg:flex-row lg:items-center justify-between gap-2">
           <h2 class="text-2xl font-bold text-yellow-950 dark:text-yellow-200">
             {{ name }}
           </h2>

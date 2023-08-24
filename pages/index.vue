@@ -8,8 +8,8 @@ const state = useStore()
 
 <template>
   <div>
-    <div class="flex justify-between my-8">
-      <h1 class="text-5xl font-bold font-headings text-yellow-950 dark:text-yellow-200" style="--stagger:1" data-animate>
+    <div class="flex justify-between flex-col-reverse lg:flex-row gap-4 my-8">
+      <h1 class="text-5xl font-bold font-headings text-yellow-950 dark:text-yellow-200 truncate" style="--stagger:1" data-animate>
         <pato-coin />{{ state.cash }}
       </h1>
       <div class="flex" style="--stagger:2" data-animate>
@@ -27,7 +27,7 @@ const state = useStore()
         </button>
       </div>
     </div>
-    <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-12" style="--stagger:3" data-animate>
+    <ul class="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-12" style="--stagger:3" data-animate>
       <li v-for="(item, key) in items" :key="item.name">
         <ItemCard v-bind="item" :item-key="key" />
       </li>

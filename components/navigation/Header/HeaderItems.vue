@@ -42,9 +42,9 @@ const items = [
   <div class="flex-1">
     <ul class="flex flex-col divide-y dark:divide-neutral-600">
       <li v-for="link in items" :key="link.href">
-        <nuxt-link :to="link.href" class="flex items-center gap-3 px-8 py-3 text-2xl text-md font-headings">
+        <nuxt-link :to="link.href" class="flex justify-center flex items-center gap-3 lg:px-8 py-3 text-2xl text-md font-headings">
           <UnoIcon v-if="link.icon" :class="link.icon" />
-          {{ link.label }}
+          <span class="hidden lg:block">{{ link.label }}</span>
         </nuxt-link>
       </li>
     </ul>
