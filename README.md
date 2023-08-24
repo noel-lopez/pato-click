@@ -1,10 +1,10 @@
 # Pato Click - ¡Gana más Patomonedas que Nadie!
 
-<!--
+
 <p align="center">
-<img src="" alt="project image">
+<img src="./banner.png" alt="project image">
 </p>
--->
+
 
 ¡Sumérgete en la adictiva experiencia de Pato Click, el juego idle que te sumerge en un mundo lleno de plumas y fortuna! 🦆💰 
 
