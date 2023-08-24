@@ -11,14 +11,14 @@ const { numberToString } = useFormat()
 </script>
 
 <template>
-  <div class="-skew-0 flex m-1 bg-emerald-50 transition-colors hover:bg-white items-center relative isolate border-white border-2 py-1 shadow-[0_0_0_2px_#000] rounded-sm">
-    <div class="absolute w-full h-full -z-1 bg-mask-hero-heavy-rain bg-gradient-to-r from-emerald-300 via-transparent to-transparent" />
+  <div class="flex m-1 bg-emerald-50 dark:bg-emerald-950 transition-colors hover:bg-emerald-900 items-center relative isolate border-white dark:border-emerald-300 border-2 py-1 shadow-[0_0_0_2px_#000] rounded-sm">
+    <div class="absolute w-full h-full -z-1 bg-mask-hero-heavy-rain bg-gradient-to-r from-emerald-300 dark:from-emerald-900 via-transparent to-transparent" />
     <nuxt-img class="absolute mr-12 -translate-x-3 z-1" :alt="name" width="150" :src="props.item === 'ALL' ? '/upgrades/upgrade_all.png' : `/items/${staticData.items[props.item].img}`" />
     <div class="flex flex-col flex-1 ml-40">
-      <h2 class="text-3xl italic font-bold text-emerald-700">
+      <h2 class="text-3xl italic font-bold text-emerald-700 dark:text-emerald-300">
         {{ name }}
       </h2>
-      <p class="text-xl text-emerald-600">
+      <p class="text-xl text-emerald-600 dark:text-emerald-400">
         <pato-coin /> {{ numberToString(props.cost) }}
       </p>
       <h3 class="text-lg">

@@ -22,7 +22,7 @@ function formatBreakpointEffect(effect: number) {
 
 <template>
   <div class="relative">
-    <button class="text-xl w-5 h-5 flex items-center justify-center absolute -top-5 -right-5 rounded-full bg-yellow-400 border border-yellow-500 text-yellow-600" @click="close">
+    <button class="absolute flex items-center justify-center w-5 h-5 text-xl text-yellow-600 bg-yellow-400 border border-yellow-500 rounded-full -top-5 -right-5" @click="close">
       x
     </button>
     <h1 class="text-lg">
