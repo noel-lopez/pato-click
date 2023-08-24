@@ -23,8 +23,11 @@ En este juego, tu objetivo es simple pero gratificante: ¡Acumula la mayor canti
 - **🦆 Acumula patomonedas:** Comienza modestamente como el patito emprendedor que eres, ¡y conviértete en el líder de un imperio que eclipsará hasta al pato más codicioso!
 - **🚀 Mejoras:** Invierte en mejoras que te permitan generar patitos más rápido.
 - **⏰ Juego Automático:** No tienes que estar siempre presente. Contrata a patomanagers que sigan generando riqueza mientras te tomas un descanso. ¡Vuelve y descubre cuántos patitos han acumulado en tu ausencia!
+- **🏅 Logros:** Desbloquea logros conforme vayas avanzando en el juego. ¡Te animamos a que los consigas todos!
+- **😎 Skins:** Personaliza tu pato con skins exclusivas que podrás desbloquear con ciertos logros.
 
 ## Próximas características (Pasada la KuroJam)
+- **Inicio de sesión 🔑:** Queremos que puedas guardar tu progreso y acceder a él desde cualquier dispositivo. ¡No te preocupes por perder tus patomonedas!
 - **Ranking 🏆:** Queremos implementar un ranking global para que puedas competir con otros jugadores, el cual incluirá un sistema de ligas.
 - **Reset 🔄:** Cuando tengas suficientes patomonedas, podrás resetear tu progreso para empezar de nuevo con mejoras que te permitan avanzar más rápido.
 - **i18n 🌐:** Queremos que el juego esté disponible en varios idiomas, para que puedas disfrutarlo en tu lengua materna.
