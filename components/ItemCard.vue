@@ -19,6 +19,8 @@ const purchaseQuantity = computed(() => state.itemLevelQuantityToBuy(props.itemK
 const purchaseCost = computed(() => state.nextItemLevelCost(props.itemKey as ItemKey))
 const purchaseBlocked = computed(() => !state.isPurchaseable(purchaseCost.value))
 
+let interval: ReturnType<typeof setInterval>
+
 // Auto start when purchase manager
 watch(isAutomatic, (isAuto) => {
   if (isAuto === true && itemLevel.value > 0 && percentage.value === 0)
@@ -31,8 +33,6 @@ watch(itemLevel, (level) => {
 })
 
 const { numberToString } = useFormat()
-
-let interval: ReturnType<typeof setInterval>
 
 function start() {
   if (percentage.value > 0)
