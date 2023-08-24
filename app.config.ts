@@ -129,26 +129,26 @@ export default defineAppConfig({
       cost: 10_000_000,
     },
     fountain: {
-      name: 'Manager de fuentes para patos',
+      name: 'Splashi',
       description: 'Encargado de cuidar la Fuente Aleteo',
       img: 'manager_fountain.png',
       cost: 111_111_111,
     },
     lantern: {
-      name: 'Manager de farolillos',
+      name: 'Hikari',
       description: 'Encargado de instalar farolillos en el estanque',
       img: 'manager_lantern.png',
       cost: 555_555_000,
     },
     thermalBath: {
-      name: 'Manager de baños termales',
+      name: 'Roberto Ducky',
       description: 'Encargado de cuidar los baños termales',
       img: 'manager_thermal_bath.png',
       cost: 1_0000_000_000,
     },
     house: {
-      name: 'Manager de casas para patos',
-      description: 'Encargado de cuidar las casas para patos',
+      name: 'Inmobiliarias Jimmy',
+      description: 'Encargado de construir casitas para patos',
       img: 'manager_house.png',
       cost: 100_000_000_000,
     },
@@ -256,7 +256,7 @@ export default defineAppConfig({
       '100': {
         name: 'Aspirante a patodólars',
         description: 'Consigue tus primeras 100 patomonedas',
-        img: '/brand/coin.png',
+        img: '/skins/skin_default_brown.png',
       },
       '50k': {
         name: 'Mentor de patitos',
@@ -383,7 +383,7 @@ export default defineAppConfig({
       frog_25: {
         name: 'Pato saltarín',
         description: 'Ranita nivel 25!',
-        img: '/items/item_frog.png',
+        img: '/skins/skin_frog.png',
       },
       frog_50: {
         name: 'Amigo anfibio',
@@ -505,23 +505,23 @@ export default defineAppConfig({
   skins: {
     default: {
       name: 'Pato',
-      description: 'Pato tonto',
-      img: 'skin_default.png',
+      description: '¿En serio te vas a quedar con el pato por defecto?',
+      img: '/skins/skin_default.png',
     },
     defaultBrown: {
       name: 'Pato marrón',
-      description: 'Pato con manchitas blancas',
-      img: 'skin_default_brown.png',
+      description: 'Vale, este es un poco mejor',
+      img: '/skins/skin_default_brown.png',
+    },
+    kuro: {
+      name: 'KuroPato',
+      description: 'Streamer de programación que hace Quack',
+      img: '/skins/skin_kuro.png',
     },
     frog: {
       name: 'RanaPato',
       description: 'Mejor amigo de la ranita del estanque',
-      img: 'skin_frog.png',
-    },
-    kuro: {
-      name: 'KuroPato',
-      description: 'Pato streamer de programación',
-      img: 'skin_kuro.png',
+      img: '/skins/skin_frog.png',
     },
   },
 })
