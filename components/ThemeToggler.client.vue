@@ -1,15 +1,33 @@
 <script setup>
+const enabled = ref(false)
+
 const colorMode = useColorMode()
-colorMode.preference = 'light'
+const colorIcon = computed(() => {
+  const preference = colorMode.value
+  if (preference === 'light')
+    return 'i-ph-sun-bold'
+  else
+    return 'i-ph-moon-bold'
+})
+function darktoggle() {
+  const preference = colorMode.value
+  if (preference === 'dark')
+    colorMode.preference = 'light'
+  else if (preference === 'light')
+    colorMode.preference = 'dark'
+}
 </script>
 
 <template>
-  <div class="flex flex-col text-4xl">
-    <button v-if="colorMode.preference === 'light'" @click="colorMode.preference = 'dark'">
-      <UnoIcon class="i-carbon-moon" />
-    </button>
-    <button v-else @click="colorMode.preference = 'light'">
-      <UnoIcon class="i-carbon-sun" />
-    </button>
-  </div>
+  <ColorScheme
+    placeholder="..."
+    tag="div"
+  >
+  <button>
+    <UnoIcon
+      class="text-current grow-0 h-16 w-16 cursor-pointer"
+      :class="colorIcon"
+      @click="darktoggle"
+    /></button>
+  </ColorScheme>
 </template>

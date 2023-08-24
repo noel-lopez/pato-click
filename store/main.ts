@@ -1,6 +1,11 @@
-// import { persistedState } from 'pinia-plugin-persistedstate'
 import type { AchievementType, AchievementsConfig, BuyMode, ItemKey } from 'index'
 import { defineStore } from 'pinia'
+import { useLocalStorage } from '@vueuse/core'
+import type { Ref } from 'vue'
+
+function ls<T>(id: string, defaultValue: T): Ref<T> {
+  return useLocalStorage(id, defaultValue)
+}
 
 export const useStore = defineStore('main', () => {
   // DATA TYPES
@@ -18,12 +23,12 @@ export const useStore = defineStore('main', () => {
   }
 
   // STATE
-  const userCash = ref(4)
-  const moneySpent = ref(0)
+  const userCash = ls<number>('pato-user-cash', 4)
+  const moneySpent = ls<number>('pato-money-spent', 0)
 
   const buyMode = ref<BuyMode>(1)
-  const userSkin = ref<SkinId>('default')
-  const itemLevels = ref<ItemLevelsRef>({
+  const userSkin = ls<SkinId>('pato-user-skin', 'default')
+  const itemLevels = ls<ItemLevelsRef>('pato-item-levels', {
     food: 0,
     lily: 0,
     divingKit: 0,
@@ -35,7 +40,7 @@ export const useStore = defineStore('main', () => {
     thermalBath: 0,
     house: 0,
   })
-  const itemMultipliers = ref<ItemMultipliersRef>({
+  const itemMultipliers = ls<ItemMultipliersRef>('pato-item-multipliers', {
     food: [],
     lily: [],
     divingKit: [],
@@ -47,10 +52,10 @@ export const useStore = defineStore('main', () => {
     thermalBath: [],
     house: [],
   })
-  const purchasedManagers = ref<ItemKey[]>([])
-  const purchasedUpgrades = ref<UpgradeId[]>([])
-  const earnedAchievements = ref<AchievementId[]>([])
-  const earnedSkins = ref<SkinId[]>([])
+  const purchasedManagers = ls<ItemKey[]>('pato-purchased-managers', [])
+  const purchasedUpgrades = ls<UpgradeId[]>('pato-purchased-upgrades', [])
+  const earnedAchievements = ls<AchievementId[]>('pato-earned-achievements', [])
+  const earnedSkins = ls<SkinId[]>('pato-earned-skins', [])
 
   // COMPOSABLES
   const staticData = useAppConfig()
