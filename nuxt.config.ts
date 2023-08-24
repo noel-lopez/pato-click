@@ -4,12 +4,11 @@ export default defineNuxtConfig({
     '@unocss/nuxt',
     '@vueuse/nuxt',
     '@pinia/nuxt',
-    '@pinia-plugin-persistedstate/nuxt',
   ],
   css: ['@unocss/reset/tailwind.css', 'notivue/animations.css'],
-  supabase: {
-    redirect: false,
-  },
+  // supabase: {
+  //   redirect: false,
+  // },
   nitro: {
     esbuild: {
       options: {
