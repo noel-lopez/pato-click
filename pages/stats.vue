@@ -4,9 +4,9 @@ import { useStore } from '~/store/main'
 import { useFormat } from '~/composables/useFormat'
 
 const state = useStore()
-const { currencyToString } = useFormat()
-const formattedEarnedCash = computed(() => currencyToString(state.earnedCash))
-const formattedMoneySpent = computed(() => currencyToString(state.moneySpent))
+const { numberToString } = useFormat()
+const formattedEarnedCash = computed(() => numberToString(state.earnedCash))
+const formattedMoneySpent = computed(() => numberToString(state.moneySpent))
 
 function getAchievementCategoryTitle(type: AchievementType) {
   switch (type) {
@@ -28,9 +28,6 @@ function getAchievementCategoryTitle(type: AchievementType) {
       <pato-coin />{{ state.cash }}
     </h1>
     <header class="flex flex-col justify-between gap-2 w-2xl">
-      <!-- <h2 class="text-3xl font-bold font-headings text-emerald-9/90">
-        Recuento de datos
-      </h2> -->
       <div class="grid grid-cols-1 gap-4 my-4 md:grid-cols-2">
         <Stat title="Patomonedas ganadas" :content="formattedEarnedCash" />
         <Stat title="Patomonedas gastadas" :content="formattedMoneySpent" />

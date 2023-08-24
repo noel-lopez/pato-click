@@ -49,6 +49,10 @@ const items = [
 <style>
 .router-link-active {
   background-image: linear-gradient(to top, #f6e05e55 0%, transparent 60%);
+  color: #463e10;
+}
+
+.dark .router-link-active {
   color: #efe8bb;
 }
 </style>

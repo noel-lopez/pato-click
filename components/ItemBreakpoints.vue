@@ -22,18 +22,18 @@ function formatBreakpointEffect(effect: number) {
 
 <template>
   <div class="relative">
-    <button class="absolute flex items-center justify-center w-5 h-5 text-xl text-yellow-600 bg-yellow-400 border border-yellow-500 rounded-full -top-5 -right-5" @click="close">
+    <button class="absolute flex items-center justify-center w-5 h-5 text-xl text-yellow-600 bg-yellow-2 border border-yellow-500 rounded-full -top-5 -right-5" @click="close">
       x
     </button>
     <h1 class="text-lg">
-      Mejora actual: <span class="font-bold">x{{ multiplier }}</span>
+      Mejora actual: <span class="font-semibold">x{{ multiplier }}</span>
     </h1>
     <h2 class="text-lg">
       Proximas mejoras:
     </h2>
     <ul>
       <li v-for="breakpoint in nextBreakpoints" :key="breakpoint.level">
-        <p><span class="font-bold">lvl {{ breakpoint.level }}</span> -> x{{ formatBreakpointEffect(breakpoint.effect) }}</p>
+        <p><span class="font-semibold">lvl {{ breakpoint.level }}</span> -> x{{ formatBreakpointEffect(breakpoint.effect) }}</p>
       </li>
     </ul>
   </div>
