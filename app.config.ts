@@ -130,7 +130,7 @@ export default defineAppConfig({
     },
     fountain: {
       name: 'Manager de fuentes para patos',
-      description: 'Encargado de cuidar las fuentes para patos',
+      description: 'Encargado de cuidar la Fuente Aleteo',
       img: 'manager_fountain.png',
       cost: 111_111_111,
     },
