@@ -9,6 +9,7 @@ export default defineNuxtConfig({
   ],
   colorMode: {
     classSuffix: '',
+    preference: 'light',
   },
   css: ['@unocss/reset/tailwind.css', 'notivue/animations.css'],
   // supabase: {

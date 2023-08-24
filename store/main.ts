@@ -55,7 +55,7 @@ export const useStore = defineStore('main', () => {
   const purchasedManagers = ls<ItemKey[]>('pato-purchased-managers', [])
   const purchasedUpgrades = ls<UpgradeId[]>('pato-purchased-upgrades', [])
   const earnedAchievements = ls<AchievementId[]>('pato-earned-achievements', [])
-  const earnedSkins = ls<SkinId[]>('pato-earned-skins', [])
+  const earnedSkins = ls<SkinId[]>('pato-earned-skins', ['default'])
 
   // COMPOSABLES
   const staticData = useAppConfig()
@@ -84,7 +84,10 @@ export const useStore = defineStore('main', () => {
     type: T,
     id: K,
   ): AchievementsConfig => staticData.achievements[type][id]
-  // const skinConfig = (skinId: SkinId) => staticData.skins[skinId]
+  const skinConfig = (skinId: SkinId) => staticData.skins[skinId]
+  const earnedCash = computed(() => {
+    return moneySpent.value + userCash.value
+  })
 
   // LIST GETTERS
   const unpurchasedManagersList = computed(() => {
@@ -196,9 +199,11 @@ export const useStore = defineStore('main', () => {
     moneySpent.value += amount
   }
 
-  const earnedCash = computed(() => {
-    return moneySpent.value + userCash.value
-  })
+  const selectSkin = (skinId: SkinId) => {
+    if (!skinIsEarned(skinId))
+      return
+    userSkin.value = skinId
+  }
 
   const purchaseItemLevel = (itemName: ItemKey) => {
     const cost = nextItemLevelCost(itemName)
@@ -255,6 +260,7 @@ export const useStore = defineStore('main', () => {
     userSkin,
     itemLevel,
     achievementInfo: achievementConfig,
+    skinInfo: skinConfig,
     managerIsPurchased,
     upgradeIsPurchased,
     achievementIsEarned,
@@ -275,5 +281,6 @@ export const useStore = defineStore('main', () => {
     purchaseUpgrade,
     earnAchievement,
     earnSkin,
+    selectSkin,
   }
 })

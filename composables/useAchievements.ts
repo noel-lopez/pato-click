@@ -37,6 +37,15 @@ export function useAchievements() {
       pushRare('allAchievements')
   }
 
+  const checkAditionalReward = (id: AchievementId) => {
+    if (id === 'kuroJam')
+      store.earnSkin('kuro')
+    if (id === '100')
+      store.earnSkin('defaultBrown')
+    if (id === 'frog_25')
+      store.earnSkin('frog')
+  }
+
   // MAIN FUNCTION
   function pushAchievement<T extends AchievementType, K extends keyof typeof staticData.achievements[T]>(
     type: T,
@@ -47,6 +56,7 @@ export function useAchievements() {
       return
     store.earnAchievement(id as AchievementId)
     checkAllAchievements()
+    checkAditionalReward(id as AchievementId)
     push.success({
       title: achievementData.name,
       message: achievementData.description,
