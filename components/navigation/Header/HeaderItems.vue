@@ -20,6 +20,11 @@ const items = [
     href: '/stats',
     icon: 'i-mingcute-chart-line-line',
   },
+  {
+    label: 'Perfil',
+    href: '/user',
+    icon: 'i-mingcute-user-1-line',
+  },
   // {
   //   label: 'Configuración',
   //   href: '/settings',
