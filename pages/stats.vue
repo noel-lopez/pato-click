@@ -24,10 +24,10 @@ function getAchievementCategoryTitle(type: AchievementType) {
 
 <template>
   <div>
-    <h1 class="flex items-center my-8 text-5xl font-bold font-headings text-emerald-950 dark:text-emerald-300">
+    <h1 class="flex items-center my-8 text-5xl font-bold font-headings text-emerald-950 dark:text-emerald-300" style="--stagger:1" data-animate>
       <pato-coin />{{ state.cash }}
     </h1>
-    <header class="flex flex-col justify-between gap-2 w-2xl">
+    <header class="flex flex-col justify-between gap-2 w-2xl" style="--stagger:2" data-animate>
       <div class="grid grid-cols-1 gap-4 my-4 md:grid-cols-2">
         <Stat title="Patomonedas ganadas" :content="formattedEarnedCash" />
         <Stat title="Patomonedas gastadas" :content="formattedMoneySpent" />
@@ -35,7 +35,7 @@ function getAchievementCategoryTitle(type: AchievementType) {
         <Stat title="Niveles de items" :content="state.itemLevelsCount" />
       </div>
     </header>
-    <section v-for="achievementCategory in state.achievementsList" :key="achievementCategory.type" class="my-4">
+    <section v-for="achievementCategory in state.achievementsList" :key="achievementCategory.type" class="my-4" style="--stagger:3" data-animate>
       <h3 class="py-3 text-3xl font-bold font-headings text-emerald-9/90 dark:text-emerald-400">
         {{ getAchievementCategoryTitle(achievementCategory.type) }}
       </h3>

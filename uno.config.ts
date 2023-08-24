@@ -43,8 +43,8 @@ export default defineConfig({
     presetWebFonts({
       provider: 'google',
       fonts: {
-        sans: 'Dekko:400,500,700',
-        headings: 'Berkshire Swash',
+        sans: 'Kalam:400,500,700',
+        headings: 'Bree Serif',
       },
     }),
   ],

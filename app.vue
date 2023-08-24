@@ -39,6 +39,14 @@ useAchievements()
 </template>
 
 <style>
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.2s ease;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
 @keyframes hueRotateAnimation {
   0% {
     filter: hue-rotate(0deg);
@@ -47,13 +55,7 @@ useAchievements()
     filter: hue-rotate(360deg);
   }
 }
-:root.kuro {
-        background: url('https://cdn.beacons.ai/user_content/8yNKHUQiH7PICchDY2ZTmabHDtv2/profile_ikurotime.webp?t=1672489346139');
-        background-size:cover;
-        animation: hueRotateAnimation 30s infinite; /* Change the duration as needed */
 
-        font-family: "Comic Sans MS" !important;
-    }
 :root.dark {
   color-scheme: dark;
 }
@@ -101,7 +103,7 @@ useAchievements()
   }
 
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-5px);
   }
 
   100% {

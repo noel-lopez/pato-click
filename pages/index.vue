@@ -9,10 +9,10 @@ const state = useStore()
 <template>
   <div>
     <div class="flex justify-between my-8">
-      <h1 class="text-5xl font-bold font-headings text-yellow-950 dark:text-yellow-200">
+      <h1 class="text-5xl font-bold font-headings text-yellow-950 dark:text-yellow-200" style="--stagger:1" data-animate>
         <pato-coin />{{ state.cash }}
       </h1>
-      <div class="flex">
+      <div class="flex" style="--stagger:2" data-animate>
         <button class="block bg-amber-300 dark:bg-neutral-800  border-white dark:border-yellow-200  border-2 py-0 shadow-[0_0_0_2px_#000] rounded-l-xl text-xl font-headings shadow-[0_4px_0_#cbbf6e] active:translate-y-1 active:!shadow-none select-none px-3 text-center transition-filter" :class="{ grayscale: state.buyMode !== 1 }" @click="state.buyMode = 1">
           &times;1
         </button>
@@ -27,7 +27,7 @@ const state = useStore()
         </button>
       </div>
     </div>
-    <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-12">
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-12" style="--stagger:3" data-animate>
       <li v-for="(item, key) in items" :key="item.name">
         <ItemCard v-bind="item" :item-key="key" />
       </li>

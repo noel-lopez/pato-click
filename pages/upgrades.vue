@@ -6,14 +6,14 @@ const state = useStore()
 
 <template>
   <div>
-    <h1 class="flex items-center my-8 text-5xl font-bold font-headings text-emerald-950 dark:text-emerald-500">
+    <h1 class="flex items-center my-8 text-5xl font-bold font-headings text-emerald-950 dark:text-emerald-500" style="--stagger:1" data-animate>
       <pato-coin />{{ state.cash }}
     </h1>
     <header class="flex flex-col items-center justify-between gap-2 w-2xl">
-      <h2 class="text-3xl font-bold font-headings text-emerald-900/90 dark:text-emerald-500">
+      <h2 class="text-3xl font-bold font-headings text-emerald-900/90 dark:text-emerald-500" style="--stagger:2" data-animate>
         ¡Para ganar también hay que invertir!
       </h2>
-      <p class="text-xl">
+      <p class="text-xl" style="--stagger:3" data-animate>
         Compra estas mejoras de gran calidad para darle un empujón a tu estanque.
       </p>
     </header>
