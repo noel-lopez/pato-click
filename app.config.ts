@@ -237,7 +237,7 @@ export default defineAppConfig({
       allAchievements: {
         name: '100%',
         description: 'Conseguido por tener todos los logros',
-        img: '/brand/logo.png',
+        img: '/achievements/100.png',
       },
       kuroJam: {
         name: 'KuroPato',
