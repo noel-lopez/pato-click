@@ -266,5 +266,5 @@ export function useAchievements() {
     window.removeEventListener('keydown', keyDownEventHandler)
   })
   // #endregion
-  pushRare('kuroJam')
+  // pushRare('kuroJam') -> removed after the jam
 }
