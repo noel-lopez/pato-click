@@ -22,7 +22,7 @@ const state = useStore()
         <ManagerCard v-bind="manager" :is-purchased="false" />
       </li>
     </ul>
-    <h3 v-if="state.purchasedManagersList.length > 0" class="mb-2 text-2xl font-bold font-headings text-betterblue-800">
+    <h3 v-if="state.purchasedManagersList.length > 0" class="mb-2 text-2xl font-bold font-headings text-betterblue-800 dark:text-betterblue-300">
       Managers contratados:
     </h3>
     <ul class="grid grid-cols-1 gap-12 max-w-[700px] py-8">
