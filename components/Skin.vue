@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { SkinsConfig } from 'index'
+import type { SkinsConfig } from '@/index'
 import { useStore } from '~/store/main'
 
 type SkinId = keyof typeof staticData.skins

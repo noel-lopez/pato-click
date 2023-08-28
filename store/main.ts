@@ -1,4 +1,4 @@
-import type { AchievementType, AchievementsConfig, BuyMode, ItemKey } from 'index'
+import type { AchievementType, AchievementsConfig, BuyMode, ItemKey } from '@/index'
 import { defineStore } from 'pinia'
 import { useLocalStorage } from '@vueuse/core'
 import type { Ref } from 'vue'

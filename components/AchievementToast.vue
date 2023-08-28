@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { AchievementType } from 'index'
 import type { NotivueItem } from 'notivue'
+import type { AchievementType } from '@/index'
 
 export interface AchievementNotification {
   img: string

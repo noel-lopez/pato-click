@@ -97,8 +97,8 @@ function start() {
         class="w-full bg-yellow-200 dark:bg-neutral-900 dark:border-neutral-500 light:bg-hero-rain-yellow-400 p-2 rounded-xl border-white border-2 light:shadow-[0_0_0_2px_#a89b49] rounded-sm light:drop-shadow-[0_4px_0_#cbbf6e]  active:translate-y-1 active:!drop-shadow-none select-none"
         aria-label="Start farming" @click="start"
       >
-        <div v-if="!isPerSec" class="relative h-8 overflow-hidden text-lg font-medium bg-green-4 dark:bg-green-600 rounded-lg">
-          <div class="h-full bg-yellow-50 dark:bg-neutral-800" :style="{ transform: `translateX(${percentage * 100}%)` }" />
+        <div v-if="!isPerSec" class="relative h-8 overflow-hidden text-lg font-medium bg-green-4 dark:bg-green-800 rounded-lg">
+          <div class="h-full bg-yellow-50 dark:bg-neutral-800 percent" />
           <span class="absolute -translate-x-1/2 top-1 left-1/2"><pato-coin />{{ numberToString(gain) }}</span>
         </div>
         <div v-else class="relative h-8 overflow-hidden text-lg font-medium bg-green-4 dark:bg-green-600 rounded-lg progress-bar-striped">
@@ -123,6 +123,10 @@ function start() {
 </template>
 
 <style scoped>
+.percent {
+  transform: translateX(calc(v-bind(percentage)*100%))
+}
+
 .slide-up-enter-active,
 .slide-up-leave-active {
   transition: all 0.25s ease-out;

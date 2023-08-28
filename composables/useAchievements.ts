@@ -1,4 +1,4 @@
-import type { AchievementType } from 'index'
+import type { AchievementType } from '@/index'
 import { usePush } from './useNotivue'
 import { useStore } from '~/store/main'
 

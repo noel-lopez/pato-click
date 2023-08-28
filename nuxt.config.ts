@@ -7,6 +7,9 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
   ],
+  experimental: {
+    headNext: true,
+  },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
   },

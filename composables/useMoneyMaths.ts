@@ -1,4 +1,4 @@
-import type { BuyMode } from 'index'
+import type { BuyMode } from '@/index'
 
 interface LevelBreakpoint {
   level: number
